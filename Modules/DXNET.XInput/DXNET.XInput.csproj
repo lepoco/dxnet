@@ -18,5 +18,8 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <OutputPath>..\..\Output\Release</OutputPath>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DXNET\DXNET.csproj" />
+  </ItemGroup>
 
 </Project>
