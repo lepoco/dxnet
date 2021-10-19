@@ -13,9 +13,10 @@
     <PackageProjectUrl>https://github.com/lepoco/dxnet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/lepoco/dxnet</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageTags>dxnet directx sharpdx direct3d multimedia 3d net5 core framework</PackageTags>
+    <PackageTags>dxnet directx xinput sharpdx direct3d multimedia 3d net5 core framework</PackageTags>
     <PackageLicense>https://raw.githubusercontent.com/lepoco/dxnet/main/LICENSE</PackageLicense>
     <Description>Assembly providing DirectX - XInput managed API.</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -30,6 +31,10 @@
     <ProjectReference Include="..\..\DXNET\DXNET.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
     <None Include="..\..\Resources\dxnet-xinput.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>

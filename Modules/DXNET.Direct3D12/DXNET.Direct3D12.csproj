@@ -16,6 +16,7 @@
     <PackageTags>dxnet directx sharpdx direct3d multimedia 3d net5 core framework</PackageTags>
     <PackageLicense>https://raw.githubusercontent.com/lepoco/dxnet/main/LICENSE</PackageLicense>
     <Description>Assembly providing DirectX - Direct3D12 managed API.</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -27,6 +28,10 @@
     <OutputPath>..\..\Output\Release</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
     <None Include="..\..\Resources\dxnet-direct3d12.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
