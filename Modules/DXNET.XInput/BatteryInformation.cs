@@ -33,7 +33,7 @@ namespace DXNET.XInput
         /// BatteryType
         /// </summary>
         public BatteryType BatteryType;
-        
+
         /// <summary>
         /// BatteryLevel
         /// </summary>

@@ -27,15 +27,21 @@ namespace DXNET.XInput
     internal interface IXInput
     {
         int XInputSetState(int dwUserIndex, DXNET.XInput.Vibration vibrationRef);
+
         int XInputGetState(int dwUserIndex, out DXNET.XInput.State stateRef);
+
         int XInputGetAudioDeviceIds(int dwUserIndex,
             System.IntPtr renderDeviceIdRef,
             System.IntPtr renderCountRef,
             System.IntPtr captureDeviceIdRef,
             System.IntPtr captureCountRef);
+
         void XInputEnable(DXNET.Mathematics.Interop.RawBool enable);
+
         int XInputGetBatteryInformation(int dwUserIndex, DXNET.XInput.BatteryDeviceType devType, out DXNET.XInput.BatteryInformation batteryInformationRef);
+
         int XInputGetKeystroke(int dwUserIndex, int dwReserved, out DXNET.XInput.Keystroke keystrokeRef);
+
         int XInputGetCapabilities(int dwUserIndex, DXNET.XInput.DeviceQueryType dwFlags, out DXNET.XInput.Capabilities capabilitiesRef);
     }
 }

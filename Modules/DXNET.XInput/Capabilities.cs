@@ -32,22 +32,22 @@ namespace DXNET.XInput
         /// Type
         /// </summary>
         public DeviceType Type;
-        
+
         /// <summary>
         /// SubType
         /// </summary>
         public DeviceSubType SubType;
-        
+
         /// <summary>
         /// Flags
         /// </summary>
         public CapabilityFlags Flags;
-        
+
         /// <summary>
         /// Gamepad
         /// </summary>
         public Gamepad Gamepad;
-        
+
         /// <summary>
         /// Vibration
         /// </summary>

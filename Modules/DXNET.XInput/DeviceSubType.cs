@@ -23,73 +23,63 @@ using System;
 
 namespace DXNET.XInput
 {
-    public enum DeviceSubType : System.Byte
+    /// <summary>
+    /// XINPUT_DEVSUBTYPE
+    /// </summary>
+    public enum DeviceSubType : byte
     {
         /// <summary>
-        /// No documentation.
+        /// XINPUT_DEVSUBTYPE_UNKNOWN
         /// </summary>
-        /// <unmanaged>XINPUT_DEVSUBTYPE_GAMEPAD</unmanaged>
-        /// <unmanaged-short>XINPUT_DEVSUBTYPE_GAMEPAD</unmanaged-short>
-        Gamepad = unchecked((System.Byte)(1)),
+        Unknown = 0,
+
         /// <summary>
-        /// No documentation.
+        /// XINPUT_DEVSUBTYPE_GAMEPAD
         /// </summary>
-        /// <unmanaged>XINPUT_DEVSUBTYPE_UNKNOWN</unmanaged>
-        /// <unmanaged-short>XINPUT_DEVSUBTYPE_UNKNOWN</unmanaged-short>
-        Unknown = unchecked((System.Byte)(0)),
+        Gamepad = 1,
+
         /// <summary>
-        /// No documentation.
+        /// XINPUT_DEVSUBTYPE_WHEEL
         /// </summary>
-        /// <unmanaged>XINPUT_DEVSUBTYPE_WHEEL</unmanaged>
-        /// <unmanaged-short>XINPUT_DEVSUBTYPE_WHEEL</unmanaged-short>
-        Wheel = unchecked((System.Byte)(2)),
+        Wheel = 2,
         /// <summary>
-        /// No documentation.
+        /// XINPUT_DEVSUBTYPE_ARCADE_STICK
         /// </summary>
-        /// <unmanaged>XINPUT_DEVSUBTYPE_ARCADE_STICK</unmanaged>
-        /// <unmanaged-short>XINPUT_DEVSUBTYPE_ARCADE_STICK</unmanaged-short>
-        ArcadeStick = unchecked((System.Byte)(3)),
+        ArcadeStick = 3,
+
         /// <summary>
-        /// No documentation.
+        /// XINPUT_DEVSUBTYPE_FLIGHT_STICK
         /// </summary>
-        /// <unmanaged>XINPUT_DEVSUBTYPE_FLIGHT_STICK</unmanaged>
-        /// <unmanaged-short>XINPUT_DEVSUBTYPE_FLIGHT_STICK</unmanaged-short>
-        FlightStick = unchecked((System.Byte)(4)),
+        FlightStick = 4,
+
         /// <summary>
-        /// No documentation.
+        /// XINPUT_DEVSUBTYPE_DANCE_PAD
         /// </summary>
-        /// <unmanaged>XINPUT_DEVSUBTYPE_DANCE_PAD</unmanaged>
-        /// <unmanaged-short>XINPUT_DEVSUBTYPE_DANCE_PAD</unmanaged-short>
-        DancePad = unchecked((System.Byte)(5)),
+        DancePad = 5,
+
         /// <summary>
-        /// No documentation.
+        /// XINPUT_DEVSUBTYPE_GUITAR
         /// </summary>
-        /// <unmanaged>XINPUT_DEVSUBTYPE_GUITAR</unmanaged>
-        /// <unmanaged-short>XINPUT_DEVSUBTYPE_GUITAR</unmanaged-short>
-        Guitar = unchecked((System.Byte)(6)),
+        Guitar = 6,
+
         /// <summary>
-        /// No documentation.
+        /// XINPUT_DEVSUBTYPE_GUITAR_ALTERNATE
         /// </summary>
-        /// <unmanaged>XINPUT_DEVSUBTYPE_GUITAR_ALTERNATE</unmanaged>
-        /// <unmanaged-short>XINPUT_DEVSUBTYPE_GUITAR_ALTERNATE</unmanaged-short>
-        GuitarAlternate = unchecked((System.Byte)(7)),
+        GuitarAlternate = 7,
+
         /// <summary>
-        /// No documentation.
+        /// XINPUT_DEVSUBTYPE_DRUM_KIT
         /// </summary>
-        /// <unmanaged>XINPUT_DEVSUBTYPE_DRUM_KIT</unmanaged>
-        /// <unmanaged-short>XINPUT_DEVSUBTYPE_DRUM_KIT</unmanaged-short>
-        DrumKit = unchecked((System.Byte)(8)),
+        DrumKit = 8,
+
         /// <summary>
-        /// No documentation.
+        /// XINPUT_DEVSUBTYPE_GUITAR_BASS
         /// </summary>
-        /// <unmanaged>XINPUT_DEVSUBTYPE_GUITAR_BASS</unmanaged>
-        /// <unmanaged-short>XINPUT_DEVSUBTYPE_GUITAR_BASS</unmanaged-short>
-        GuitarBass = unchecked((System.Byte)(11)),
+        GuitarBass = 11,
+
         /// <summary>
-        /// No documentation.
+        /// XINPUT_DEVSUBTYPE_ARCADE_PAD
         /// </summary>
-        /// <unmanaged>XINPUT_DEVSUBTYPE_ARCADE_PAD</unmanaged>
-        /// <unmanaged-short>XINPUT_DEVSUBTYPE_ARCADE_PAD</unmanaged-short>
-        ArcadePad = unchecked((System.Byte)(19))
+        ArcadePad = 19
     }
 }

@@ -41,7 +41,7 @@ namespace DXNET.XInput
         /// <param name="userIndex">Index of the user.</param>
         public Controller(UserIndex userIndex = UserIndex.Any)
         {
-            if(xinput == null)
+            if (xinput == null)
             {
                 throw new NotSupportedException("XInput 1.4 or 1.3 or 9.1.0 is not installed");
             }
@@ -131,7 +131,7 @@ namespace DXNET.XInput
         /// <param name="enableReporting">if set to <see langword="true"/> [enable reporting].</param>
         public static void SetReporting(bool enableReporting)
         {
-            if(xinput != null)
+            if (xinput != null)
             {
                 xinput.XInputEnable(enableReporting);
             }
@@ -167,7 +167,7 @@ namespace DXNET.XInput
 #if !WINDOWS_UWP
         static Controller()
         {
-            if(LoadLibrary("xinput1_4.dll") != IntPtr.Zero)
+            if (LoadLibrary("xinput1_4.dll") != IntPtr.Zero)
             {
                 xinput = new XInput14();
             }

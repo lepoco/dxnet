@@ -8,6 +8,14 @@
     <Copyright>Copyright 2014-2019 Alexandre Mutel | 2021 DXNET Contributors</Copyright>
     <Company>DXNET Contributors</Company>
     <Authors>DXNET Contributors</Authors>
+    <PackageIcon>dxnet-mediafoundation.png</PackageIcon>
+    <PackageIconUrl />
+    <PackageProjectUrl>https://github.com/lepoco/dxnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/lepoco/dxnet</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>dxnet directx sharpdx direct3d multimedia 3d net5 core framework</PackageTags>
+    <PackageLicense>https://raw.githubusercontent.com/lepoco/dxnet/main/LICENSE</PackageLicense>
+    <Description>Assembly providing DirectX - MediaFoundation managed API.</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -18,5 +26,11 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <OutputPath>..\..\Output\Release</OutputPath>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\Resources\dxnet-mediafoundation.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

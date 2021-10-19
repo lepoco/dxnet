@@ -24,36 +24,29 @@ using System;
 namespace DXNET.XInput
 {
     /// <summary>
-    /// No documentation.
+    /// XINPUT_KEYSTROKE_FLAGS
     /// </summary>
-    /// <unmanaged>XINPUT_KEYSTROKE_FLAGS</unmanaged>
-    /// <unmanaged-short>XINPUT_KEYSTROKE_FLAGS</unmanaged-short>
     [Flags]
-    public enum KeyStrokeFlags : System.Int16
+    public enum KeyStrokeFlags : short
     {
         /// <summary>
-        /// No documentation.
+        /// XINPUT_KEYSTROKE_KEYDOWN
         /// </summary>
-        /// <unmanaged>XINPUT_KEYSTROKE_KEYDOWN</unmanaged>
-        /// <unmanaged-short>XINPUT_KEYSTROKE_KEYDOWN</unmanaged-short>
-        KeyDown = unchecked((System.Int16)(1)),
+        KeyDown = 1,
+
         /// <summary>
-        /// No documentation.
+        /// XINPUT_KEYSTROKE_KEYUP
         /// </summary>
-        /// <unmanaged>XINPUT_KEYSTROKE_KEYUP</unmanaged>
-        /// <unmanaged-short>XINPUT_KEYSTROKE_KEYUP</unmanaged-short>
-        KeyUp = unchecked((System.Int16)(2)),
+        KeyUp = 2,
+
         /// <summary>
-        /// No documentation.
+        /// XINPUT_KEYSTROKE_REPEAT
         /// </summary>
-        /// <unmanaged>XINPUT_KEYSTROKE_REPEAT</unmanaged>
-        /// <unmanaged-short>XINPUT_KEYSTROKE_REPEAT</unmanaged-short>
-        Repeat = unchecked((System.Int16)(4)),
+        Repeat = 4,
+
         /// <summary>
         /// None
         /// </summary>
-        /// <unmanaged>None</unmanaged>
-        /// <unmanaged-short>None</unmanaged-short>
-        None = unchecked((System.Int16)(0))
+        None = 0
     }
 }

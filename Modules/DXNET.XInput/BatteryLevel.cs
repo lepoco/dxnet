@@ -30,17 +30,17 @@ namespace DXNET.XInput
         /// BATTERY_LEVEL_EMPTY
         /// </summary>
         Empty = 0,
-        
+
         /// <summary>
         /// BATTERY_LEVEL_LOW
         /// </summary>
         Low = 1,
-        
+
         /// <summary>
         /// BATTERY_LEVEL_MEDIUM
         /// </summary>
         Medium = 2,
-        
+
         /// <summary>
         /// BATTERY_LEVEL_FULL
         /// </summary>

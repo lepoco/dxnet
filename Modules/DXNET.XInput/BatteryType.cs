@@ -30,22 +30,22 @@ namespace DXNET.XInput
         /// BATTERY_TYPE_DISCONNECTED
         /// </summary>
         Disconnected = 0,
-        
+
         /// <summary>
         /// BATTERY_TYPE_WIRED
         /// </summary>
         Wired = 1,
-        
+
         /// <summary>
         /// BATTERY_TYPE_ALKALINE
         /// </summary>
         Alkaline = 2,
-        
+
         /// <summary>
         /// BATTERY_TYPE_NIMH
         /// </summary>
         Nimh = 3,
-        
+
         /// <summary>
         /// BATTERY_TYPE_UNKNOWN
         /// </summary>

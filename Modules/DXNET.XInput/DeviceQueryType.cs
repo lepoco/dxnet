@@ -23,19 +23,19 @@ using System;
 
 namespace DXNET.XInput
 {
+    /// <summary>
+    /// XINPUT_FLAG
+    /// </summary>
     public enum DeviceQueryType : System.Int32
     {
         /// <summary>
-        /// No documentation.
+        /// XINPUT_FLAG_GAMEPAD
         /// </summary>
-        /// <unmanaged>XINPUT_FLAG_GAMEPAD</unmanaged>
-        /// <unmanaged-short>XINPUT_FLAG_GAMEPAD</unmanaged-short>
         Gamepad = unchecked((System.Int32)(1)),
+
         /// <summary>
-        /// No documentation.
+        /// XINPUT_FLAG_ANY
         /// </summary>
-        /// <unmanaged>XINPUT_FLAG_ANY</unmanaged>
-        /// <unmanaged-short>XINPUT_FLAG_ANY</unmanaged-short>
         Any = unchecked((System.Int32)(0))
     }
 }

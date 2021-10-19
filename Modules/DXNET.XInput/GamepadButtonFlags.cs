@@ -23,24 +23,85 @@ using System;
 
 namespace DXNET.XInput
 {
+    /// <summary>
+    /// GamepadButtonFlags
+    /// </summary>
     [Flags]
     public enum GamepadButtonFlags : ushort
     {
+        /// <summary>
+        /// None
+        /// </summary>
         None = 0,
+
+        /// <summary>
+        /// DPadUp
+        /// </summary>
         DPadUp = 0x0001,
+
+        /// <summary>
+        /// DPadDown
+        /// </summary>
         DPadDown = 0x0002,
+
+        /// <summary>
+        /// DPadLeft
+        /// </summary>
         DPadLeft = 0x0004,
+
+        /// <summary>
+        /// DPadRight
+        /// </summary>
         DPadRight = 0x0008,
+
+        /// <summary>
+        /// Start
+        /// </summary>
         Start = 0x0010,
+
+        /// <summary>
+        /// Back
+        /// </summary>
         Back = 0x0020,
+
+        /// <summary>
+        /// LeftThumb
+        /// </summary>
         LeftThumb = 0x0040,
+
+        /// <summary>
+        /// RightThumb
+        /// </summary>
         RightThumb = 0x0080,
+
+        /// <summary>
+        /// LeftShoulder
+        /// </summary>
         LeftShoulder = 0x0100,
+
+        /// <summary>
+        /// RightShoulder
+        /// </summary>
         RightShoulder = 0x0200,
+
+        /// <summary>
+        /// A
+        /// </summary>
         A = 0x1000,
+
+        /// <summary>
+        /// B
+        /// </summary>
         B = 0x2000,
+
+        /// <summary>
+        /// X
+        /// </summary>
         X = 0x4000,
+
+        /// <summary>
+        /// Y
+        /// </summary>
         Y = 0x8000
     }
 }
-

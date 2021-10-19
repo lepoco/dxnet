@@ -33,27 +33,27 @@ namespace DXNET.XInput
         /// XINPUT_CAPS_VOICE_SUPPORTED
         /// </summary>
         VoiceSupported = 4,
-        
+
         /// <summary>
         /// XINPUT_CAPS_FFB_SUPPORTED
         /// </summary>
         FfbSupported = 1,
-        
+
         /// <summary>
         /// XINPUT_CAPS_WIRELESS
         /// </summary>
         Wireless = 2,
-        
+
         /// <summary>
         /// XINPUT_CAPS_PMD_SUPPORTED
         /// </summary>
         PmdSupported = 8,
-        
+
         /// <summary>
         /// XINPUT_CAPS_NO_NAVIGATION
         /// </summary>
         NoNavigation = 16,
-        
+
         /// <summary>
         /// None
         /// </summary>

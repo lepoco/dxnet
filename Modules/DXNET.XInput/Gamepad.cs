@@ -19,60 +19,62 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
+using System.Runtime.InteropServices;
+
 namespace DXNET.XInput
 {
-    [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential, Pack = 0, CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
+    [StructLayout(LayoutKind.Sequential, Pack = 0, CharSet = CharSet.Unicode)]
     public partial struct Gamepad
     {
+        /// <summary>
+        /// LeftThumbDeadZone
+        /// </summary>
         public const short LeftThumbDeadZone = 7849;
-        ///<summary>Constant RightThumbDeadZone</summary>
-        ///<unmanaged>XINPUT_GAMEPAD_RIGHT_THUMB_DEADZONE</unmanaged>
-        public const short RightThumbDeadZone = 8689;
-        /// <summary>
-        /// No documentation.
-        /// </summary>
-        /// <unmanaged>wButtons</unmanaged>
-        /// <unmanaged-short>wButtons</unmanaged-short>
-        public DXNET.XInput.GamepadButtonFlags Buttons;
-        /// <summary>
-        /// No documentation.
-        /// </summary>
-        /// <unmanaged>bLeftTrigger</unmanaged>
-        /// <unmanaged-short>bLeftTrigger</unmanaged-short>
-        public System.Byte LeftTrigger;
-        /// <summary>
-        /// No documentation.
-        /// </summary>
-        /// <unmanaged>bRightTrigger</unmanaged>
-        /// <unmanaged-short>bRightTrigger</unmanaged-short>
-        public System.Byte RightTrigger;
-        /// <summary>
-        /// No documentation.
-        /// </summary>
-        /// <unmanaged>sThumbLX</unmanaged>
-        /// <unmanaged-short>sThumbLX</unmanaged-short>
-        public System.Int16 LeftThumbX;
-        /// <summary>
-        /// No documentation.
-        /// </summary>
-        /// <unmanaged>sThumbLY</unmanaged>
-        /// <unmanaged-short>sThumbLY</unmanaged-short>
-        public System.Int16 LeftThumbY;
-        /// <summary>
-        /// No documentation.
-        /// </summary>
-        /// <unmanaged>sThumbRX</unmanaged>
-        /// <unmanaged-short>sThumbRX</unmanaged-short>
-        public System.Int16 RightThumbX;
-        /// <summary>
-        /// No documentation.
-        /// </summary>
-        /// <unmanaged>sThumbRY</unmanaged>
-        /// <unmanaged-short>sThumbRY</unmanaged-short>
-        public System.Int16 RightThumbY;
 
-        /// <summary>Constant TriggerThreshold.</summary>
-        /// <unmanaged>XINPUT_GAMEPAD_TRIGGER_THRESHOLD</unmanaged>
+        /// <summary>
+        /// RightThumbDeadZone
+        /// </summary>
+        public const short RightThumbDeadZone = 8689;
+
+        /// <summary>
+        /// wButtons
+        /// </summary>
+        public GamepadButtonFlags Buttons;
+
+        /// <summary>
+        /// LeftTrigger
+        /// </summary>
+        public byte LeftTrigger;
+
+        /// <summary>
+        /// bRightTrigger
+        /// </summary>
+        public byte RightTrigger;
+
+        /// <summary>
+        /// sThumbLX
+        /// </summary>
+        public short LeftThumbX;
+
+        /// <summary>
+        /// sThumbLY
+        /// </summary>
+        public short LeftThumbY;
+
+        /// <summary>
+        /// sThumbRX
+        /// </summary>
+        public short RightThumbX;
+
+        /// <summary>
+        /// sThumbRY
+        /// </summary>
+        public short RightThumbY;
+
+        /// <summary>
+        /// XINPUT_GAMEPAD_TRIGGER_THRESHOLD
+        /// </summary>
         public const byte TriggerThreshold = unchecked((byte)30u);
 
         public override string ToString()
@@ -81,4 +83,3 @@ namespace DXNET.XInput
         }
     }
 }
-

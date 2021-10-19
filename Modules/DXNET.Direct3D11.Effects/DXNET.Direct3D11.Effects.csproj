@@ -8,14 +8,14 @@
     <Copyright>Copyright 2014-2019 Alexandre Mutel | 2021 DXNET Contributors</Copyright>
     <Company>DXNET Contributors</Company>
     <Authors>DXNET Contributors</Authors>
-    <PackageIcon>dxnet-mathematics.png</PackageIcon>
+    <PackageIcon>dxnet-direct3d11.png</PackageIcon>
     <PackageIconUrl />
     <PackageProjectUrl>https://github.com/lepoco/dxnet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/lepoco/dxnet</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>dxnet directx sharpdx direct3d multimedia 3d net5 core framework</PackageTags>
     <PackageLicense>https://raw.githubusercontent.com/lepoco/dxnet/main/LICENSE</PackageLicense>
-    <Description>Assembly providing DirectX - Mathematics managed API.</Description>
+    <Description>Assembly providing DirectX - Effects11 managed API for Direct3D11.	</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -27,7 +27,7 @@
     <OutputPath>..\..\Output\Release</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="..\..\Resources\dxnet-mathematics.png">
+    <None Include="..\..\Resources\dxnet-direct3d11.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

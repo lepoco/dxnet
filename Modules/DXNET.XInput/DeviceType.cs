@@ -23,13 +23,14 @@ using System;
 
 namespace DXNET.XInput
 {
+    /// <summary>
+    /// XINPUT_DEVTYPE
+    /// </summary>
     public enum DeviceType : byte
     {
         /// <summary>
-        /// No documentation.
+        /// XINPUT_DEVTYPE_GAMEPAD
         /// </summary>
-        /// <unmanaged>XINPUT_DEVTYPE_GAMEPAD</unmanaged>
-        /// <unmanaged-short>XINPUT_DEVTYPE_GAMEPAD</unmanaged-short>
-        Gamepad = unchecked((System.Byte)(1))
+        Gamepad = 1
     }
 }

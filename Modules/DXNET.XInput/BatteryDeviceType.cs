@@ -30,7 +30,7 @@ namespace DXNET.XInput
         /// BATTERY_DEVTYPE_GAMEPAD
         /// </summary>
         Gamepad = 0,
-        
+
         /// <summary>
         /// BATTERY_DEVTYPE_HEADSET
         /// </summary>

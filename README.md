@@ -11,7 +11,7 @@ One of the assumptions of the fork was to cut it off from other libraries and ad
 // TODO
 
 ## What's included?
-| Name| Framework | Build Status |
+| Name| Framework | Status |
 | --- | --- | --- | 
 | **DXNET** <br /> The core assembly providing infrastructure for all managed DirectX API. | .NET 5 | [![Build status](https://github.com/lepoco/dxnet/workflows/CI/badge.svg)](https://github.com/lepoco/dxnet/actions) |
 | **DXNET.Animation** <br /> Assembly providing DirectX - Animation managed API. | .NET 5 | [![Build status](https://github.com/lepoco/dxnet/workflows/CI/badge.svg)](https://github.com/lepoco/dxnet/actions) |
