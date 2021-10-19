@@ -59,7 +59,7 @@ jobs:
         with:
           name: DXNET-NUPKG
           path: |
-            Output/DXNET.*.nupkg
+            Output/Release/DXNET.*.nupkg
         
       - name: Upload update to NuGet
         uses: rohith/publish-nuget@v2
