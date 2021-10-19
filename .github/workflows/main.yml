@@ -46,18 +46,10 @@ jobs:
       - name: Build
         run: msbuild DXNET.sln -p:Configuration=Release -m
 
-      - name: Publish net50
-        uses: actions/upload-artifact@v2
-        id: publish_net5
-        with:
-          name: DXNET-NET5
-          path: |
-            Output/Release/net5.0
-
       - name: Publish nupkg
         uses: actions/upload-artifact@v2
         with:
-          name: DXNET-NUPKG
+          name: nupkg-dxnet
           path: |
             Output/Release/DXNET.*.nupkg
         
