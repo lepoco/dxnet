@@ -19,47 +19,41 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 namespace DXNET.XInput
 {
+    /// <summary>
+    /// Capabilities
+    /// </summary>
     public partial struct Capabilities
     {
         /// <summary>
-        /// No documentation.
+        /// Type
         /// </summary>
-        /// <unmanaged>Type</unmanaged>
-        /// <unmanaged-short>Type</unmanaged-short>
-        public DXNET.XInput.DeviceType Type;
+        public DeviceType Type;
+        
         /// <summary>
-        /// No documentation.
+        /// SubType
         /// </summary>
-        /// <unmanaged>SubType</unmanaged>
-        /// <unmanaged-short>SubType</unmanaged-short>
-        public DXNET.XInput.DeviceSubType SubType;
+        public DeviceSubType SubType;
+        
         /// <summary>
-        /// No documentation.
+        /// Flags
         /// </summary>
-        /// <unmanaged>Flags</unmanaged>
-        /// <unmanaged-short>Flags</unmanaged-short>
-        public DXNET.XInput.CapabilityFlags Flags;
+        public CapabilityFlags Flags;
+        
         /// <summary>
-        /// No documentation.
+        /// Gamepad
         /// </summary>
-        /// <unmanaged>Gamepad</unmanaged>
-        /// <unmanaged-short>Gamepad</unmanaged-short>
-        public DXNET.XInput.Gamepad Gamepad;
+        public Gamepad Gamepad;
+        
         /// <summary>
-        /// No documentation.
+        /// Vibration
         /// </summary>
-        /// <unmanaged>Vibration</unmanaged>
-        /// <unmanaged-short>Vibration</unmanaged-short>
-        public DXNET.XInput.Vibration Vibration;
-        [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential, Pack = 0, CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
+        public Vibration Vibration;
+
+        [StructLayout(LayoutKind.Sequential, Pack = 0, CharSet = CharSet.Unicode)]
         internal partial struct __Native
         {
             public DXNET.XInput.DeviceType Type;
@@ -80,6 +74,7 @@ namespace DXNET.XInput
             SubType = @ref.SubType;
             Flags = @ref.Flags;
             Gamepad = @ref.Gamepad;
+
             Vibration.__MarshalFrom(ref @ref.Vibration);
         }
 
@@ -89,6 +84,7 @@ namespace DXNET.XInput
             @ref.SubType = SubType;
             @ref.Flags = Flags;
             @ref.Gamepad = Gamepad;
+
             Vibration.__MarshalTo(ref @ref.Vibration);
         }
     }

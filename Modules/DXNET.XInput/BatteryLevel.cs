@@ -21,31 +21,29 @@
 
 namespace DXNET.XInput
 {
-    public enum BatteryLevel : System.Byte
+    /// <summary>
+    /// BATTERY_LEVEL
+    /// </summary>
+    public enum BatteryLevel : byte
     {
         /// <summary>
-        /// No documentation.
+        /// BATTERY_LEVEL_EMPTY
         /// </summary>
-        /// <unmanaged>BATTERY_LEVEL_EMPTY</unmanaged>
-        /// <unmanaged-short>BATTERY_LEVEL_EMPTY</unmanaged-short>
-        Empty = unchecked((System.Byte)(0)),
+        Empty = 0,
+        
         /// <summary>
-        /// No documentation.
+        /// BATTERY_LEVEL_LOW
         /// </summary>
-        /// <unmanaged>BATTERY_LEVEL_LOW</unmanaged>
-        /// <unmanaged-short>BATTERY_LEVEL_LOW</unmanaged-short>
-        Low = unchecked((System.Byte)(1)),
+        Low = 1,
+        
         /// <summary>
-        /// No documentation.
+        /// BATTERY_LEVEL_MEDIUM
         /// </summary>
-        /// <unmanaged>BATTERY_LEVEL_MEDIUM</unmanaged>
-        /// <unmanaged-short>BATTERY_LEVEL_MEDIUM</unmanaged-short>
-        Medium = unchecked((System.Byte)(2)),
+        Medium = 2,
+        
         /// <summary>
-        /// No documentation.
+        /// BATTERY_LEVEL_FULL
         /// </summary>
-        /// <unmanaged>BATTERY_LEVEL_FULL</unmanaged>
-        /// <unmanaged-short>BATTERY_LEVEL_FULL</unmanaged-short>
-        Full = unchecked((System.Byte)(3))
+        Full = 3
     }
 }

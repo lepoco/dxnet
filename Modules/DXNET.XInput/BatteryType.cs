@@ -21,37 +21,34 @@
 
 namespace DXNET.XInput
 {
-    public enum BatteryType : System.Byte
+    /// <summary>
+    /// BATTERY_TYPE
+    /// </summary>
+    public enum BatteryType : byte
     {
         /// <summary>
-        /// No documentation.
+        /// BATTERY_TYPE_DISCONNECTED
         /// </summary>
-        /// <unmanaged>BATTERY_TYPE_DISCONNECTED</unmanaged>
-        /// <unmanaged-short>BATTERY_TYPE_DISCONNECTED</unmanaged-short>
-        Disconnected = unchecked((System.Byte)(0)),
+        Disconnected = 0,
+        
         /// <summary>
-        /// No documentation.
+        /// BATTERY_TYPE_WIRED
         /// </summary>
-        /// <unmanaged>BATTERY_TYPE_WIRED</unmanaged>
-        /// <unmanaged-short>BATTERY_TYPE_WIRED</unmanaged-short>
-        Wired = unchecked((System.Byte)(1)),
+        Wired = 1,
+        
         /// <summary>
-        /// No documentation.
+        /// BATTERY_TYPE_ALKALINE
         /// </summary>
-        /// <unmanaged>BATTERY_TYPE_ALKALINE</unmanaged>
-        /// <unmanaged-short>BATTERY_TYPE_ALKALINE</unmanaged-short>
-        Alkaline = unchecked((System.Byte)(2)),
+        Alkaline = 2,
+        
         /// <summary>
-        /// No documentation.
+        /// BATTERY_TYPE_NIMH
         /// </summary>
-        /// <unmanaged>BATTERY_TYPE_NIMH</unmanaged>
-        /// <unmanaged-short>BATTERY_TYPE_NIMH</unmanaged-short>
-        Nimh = unchecked((System.Byte)(3)),
+        Nimh = 3,
+        
         /// <summary>
-        /// No documentation.
+        /// BATTERY_TYPE_UNKNOWN
         /// </summary>
-        /// <unmanaged>BATTERY_TYPE_UNKNOWN</unmanaged>
-        /// <unmanaged-short>BATTERY_TYPE_UNKNOWN</unmanaged-short>
-        Unknown = unchecked((System.Byte)(255))
+        Unknown = (byte)255
     }
 }

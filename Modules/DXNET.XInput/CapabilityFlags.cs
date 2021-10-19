@@ -23,44 +23,40 @@ using System;
 
 namespace DXNET.XInput
 {
+    /// <summary>
+    /// XINPUT_CAPS
+    /// </summary>
     [Flags]
-    public enum CapabilityFlags : System.Int16
+    public enum CapabilityFlags : short
     {
         /// <summary>
-        /// No documentation.
+        /// XINPUT_CAPS_VOICE_SUPPORTED
         /// </summary>
-        /// <unmanaged>XINPUT_CAPS_VOICE_SUPPORTED</unmanaged>
-        /// <unmanaged-short>XINPUT_CAPS_VOICE_SUPPORTED</unmanaged-short>
-        VoiceSupported = unchecked((System.Int16)(4)),
+        VoiceSupported = 4,
+        
         /// <summary>
-        /// No documentation.
+        /// XINPUT_CAPS_FFB_SUPPORTED
         /// </summary>
-        /// <unmanaged>XINPUT_CAPS_FFB_SUPPORTED</unmanaged>
-        /// <unmanaged-short>XINPUT_CAPS_FFB_SUPPORTED</unmanaged-short>
-        FfbSupported = unchecked((System.Int16)(1)),
+        FfbSupported = 1,
+        
         /// <summary>
-        /// No documentation.
+        /// XINPUT_CAPS_WIRELESS
         /// </summary>
-        /// <unmanaged>XINPUT_CAPS_WIRELESS</unmanaged>
-        /// <unmanaged-short>XINPUT_CAPS_WIRELESS</unmanaged-short>
-        Wireless = unchecked((System.Int16)(2)),
+        Wireless = 2,
+        
         /// <summary>
-        /// No documentation.
+        /// XINPUT_CAPS_PMD_SUPPORTED
         /// </summary>
-        /// <unmanaged>XINPUT_CAPS_PMD_SUPPORTED</unmanaged>
-        /// <unmanaged-short>XINPUT_CAPS_PMD_SUPPORTED</unmanaged-short>
-        PmdSupported = unchecked((System.Int16)(8)),
+        PmdSupported = 8,
+        
         /// <summary>
-        /// No documentation.
+        /// XINPUT_CAPS_NO_NAVIGATION
         /// </summary>
-        /// <unmanaged>XINPUT_CAPS_NO_NAVIGATION</unmanaged>
-        /// <unmanaged-short>XINPUT_CAPS_NO_NAVIGATION</unmanaged-short>
-        NoNavigation = unchecked((System.Int16)(16)),
+        NoNavigation = 16,
+        
         /// <summary>
         /// None
         /// </summary>
-        /// <unmanaged>None</unmanaged>
-        /// <unmanaged-short>None</unmanaged-short>
-        None = unchecked((System.Int16)(0))
+        None = 0
     }
 }

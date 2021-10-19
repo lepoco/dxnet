@@ -21,19 +21,19 @@
 
 namespace DXNET.XInput
 {
-    public enum BatteryDeviceType : System.Int32
+    /// <summary>
+    /// BATTERY_DEVTYPE
+    /// </summary>
+    public enum BatteryDeviceType : int
     {
         /// <summary>
-        /// No documentation.
+        /// BATTERY_DEVTYPE_GAMEPAD
         /// </summary>
-        /// <unmanaged>BATTERY_DEVTYPE_GAMEPAD</unmanaged>
-        /// <unmanaged-short>BATTERY_DEVTYPE_GAMEPAD</unmanaged-short>
-        Gamepad = unchecked((System.Int32)(0)),
+        Gamepad = 0,
+        
         /// <summary>
-        /// No documentation.
+        /// BATTERY_DEVTYPE_HEADSET
         /// </summary>
-        /// <unmanaged>BATTERY_DEVTYPE_HEADSET</unmanaged>
-        /// <unmanaged-short>BATTERY_DEVTYPE_HEADSET</unmanaged-short>
-        Headset = unchecked((System.Int32)(1))
+        Headset = 1
     }
 }

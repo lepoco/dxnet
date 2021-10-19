@@ -19,27 +19,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Runtime.InteropServices;
+
 namespace DXNET.XInput
 {
     /// <summary>
-    /// No documentation.
+    /// XINPUT_BATTERY_INFORMATION
     /// </summary>
-    /// <unmanaged>XINPUT_BATTERY_INFORMATION</unmanaged>
-    /// <unmanaged-short>XINPUT_BATTERY_INFORMATION</unmanaged-short>
-    [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential, Pack = 0, CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
+    [StructLayout(LayoutKind.Sequential, Pack = 0, CharSet = CharSet.Unicode)]
     public partial struct BatteryInformation
     {
         /// <summary>
-        /// No documentation.
+        /// BatteryType
         /// </summary>
-        /// <unmanaged>BatteryType</unmanaged>
-        /// <unmanaged-short>BatteryType</unmanaged-short>
-        public DXNET.XInput.BatteryType BatteryType;
+        public BatteryType BatteryType;
+        
         /// <summary>
-        /// No documentation.
+        /// BatteryLevel
         /// </summary>
-        /// <unmanaged>BatteryLevel</unmanaged>
-        /// <unmanaged-short>BatteryLevel</unmanaged-short>
-        public DXNET.XInput.BatteryLevel BatteryLevel;
+        public BatteryLevel BatteryLevel;
     }
 }

@@ -21,6 +21,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+
 using DXNET.Win32;
 
 namespace DXNET.XInput
@@ -31,6 +32,7 @@ namespace DXNET.XInput
     public class Controller
     {
         private readonly UserIndex userIndex;
+
         private static readonly IXInput xinput;
 
         /// <summary>
@@ -56,8 +58,7 @@ namespace DXNET.XInput
         /// Gets the battery information.
         /// </summary>
         /// <param name="batteryDeviceType">Type of the battery device.</param>
-        /// <returns></returns>
-        /// <unmanaged>unsigned int XInputGetBatteryInformation([In] XUSER_INDEX dwUserIndex,[In] BATTERY_DEVTYPE devType,[Out] XINPUT_BATTERY_INFORMATION* pBatteryInformation)</unmanaged>	
+        /// <returns><see cref="BatteryInformation"/></returns>
         public BatteryInformation GetBatteryInformation(BatteryDeviceType batteryDeviceType)
         {
             BatteryInformation temp;
@@ -70,8 +71,7 @@ namespace DXNET.XInput
         /// Gets the capabilities.
         /// </summary>
         /// <param name="deviceQueryType">Type of the device query.</param>
-        /// <returns></returns>
-        /// <unmanaged>unsigned int XInputGetCapabilities([In] XUSER_INDEX dwUserIndex,[In] XINPUT_DEVQUERYTYPE dwFlags,[Out] XINPUT_CAPABILITIES* pCapabilities)</unmanaged>	
+        /// <returns><see cref="Capabilities"/></returns>	
         public Capabilities GetCapabilities(DeviceQueryType deviceQueryType)
         {
             Capabilities temp;
@@ -85,7 +85,7 @@ namespace DXNET.XInput
         /// </summary>
         /// <param name="deviceQueryType">Type of the device query.</param>
         /// <param name="capabilities">The capabilities of this controller.</param>
-        /// <returns><c>true</c> if the controller is connected, <c>false</c> otherwise.</returns>
+        /// <returns><see langword="true"/> if the controller is connected, <see langword="false"/> otherwise.</returns>
         public bool GetCapabilities(DeviceQueryType deviceQueryType, out Capabilities capabilities)
         {
             return xinput.XInputGetCapabilities((int)userIndex, deviceQueryType, out capabilities) == 0;
@@ -96,8 +96,7 @@ namespace DXNET.XInput
         /// </summary>
         /// <param name="deviceQueryType">The flag.</param>
         /// <param name="keystroke">The keystroke.</param>
-        /// <returns></returns>
-        /// <unmanaged>unsigned int XInputGetKeystroke([In] XUSER_INDEX dwUserIndex,[In] unsigned int dwReserved,[Out] XINPUT_KEYSTROKE* pKeystroke)</unmanaged>	
+        /// <returns><see cref="Result"/></returns>
         public Result GetKeystroke(DeviceQueryType deviceQueryType, out Keystroke keystroke)
         {
             var result = ErrorCodeHelper.ToResult(xinput.XInputGetKeystroke((int)userIndex, (int)deviceQueryType, out keystroke));
@@ -120,7 +119,7 @@ namespace DXNET.XInput
         /// Gets the state.
         /// </summary>
         /// <param name="state">The state of this controller.</param>
-        /// <returns><c>true</c> if the controller is connected, <c>false</c> otherwise.</returns>
+        /// <returns><see langword="true"/> if the controller is connected, <see langword="false"/> otherwise.</returns>
         public bool GetState(out State state)
         {
             return xinput.XInputGetState((int)userIndex, out state) == 0;
@@ -129,7 +128,7 @@ namespace DXNET.XInput
         /// <summary>
         /// Sets the reporting.
         /// </summary>
-        /// <param name="enableReporting">if set to <c>true</c> [enable reporting].</param>
+        /// <param name="enableReporting">if set to <see langword="true"/> [enable reporting].</param>
         public static void SetReporting(bool enableReporting)
         {
             if(xinput != null)
@@ -154,7 +153,7 @@ namespace DXNET.XInput
         /// Gets a value indicating whether this instance is connected.
         /// </summary>
         /// <value>
-        /// 	<c>true</c> if this instance is connected; otherwise, <c>false</c>.
+        /// 	<see langword="true"/> if this instance is connected; otherwise, <see langword="false"/>.
         /// </value>
         public bool IsConnected
         {
