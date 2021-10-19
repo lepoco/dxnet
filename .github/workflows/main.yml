@@ -1,21 +1,3 @@
-name: Publish Release
-on:
-  push:
-    branches: [ main ]
-jobs:
-  build:
-    runs-on: windows-latest
-    if: contains(github.event.head_commit.message, '-release') == true
-    steps:
-    - uses: actions/checkout@master
-    - name: Create a Release
-      uses: elgohr/Github-Release-Action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-      with:
-        args: MyReleaseMessage
-
-
 name: CI
 on:
   push:
