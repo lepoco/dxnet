@@ -1,0 +1,70 @@
+﻿// Copyright (c) 2021 DXNET - Pomianowski Leszek & Contributors
+// Copyright (c) 2010-2019 SharpDX - Alexandre Mutel & SharpDX Contributors
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+using System;
+using System.Runtime.InteropServices;
+
+namespace DXNET.RawInput
+{
+    /// <summary>
+    /// RID_DEVICE_INFO_KEYBOARD
+    /// </summary>
+    [StructLayoutAttribute(LayoutKind.Sequential, Pack = 0, CharSet = CharSet.Unicode)]
+    internal partial struct RawDeviceInformationKeyboard
+    {
+        /// <summary>
+        /// No documentation.
+        /// </summary>
+        /// <unmanaged>dwType</unmanaged>
+        /// <unmanaged-short>dwType</unmanaged-short>
+        public System.Int32 Type;
+        /// <summary>
+        /// No documentation.
+        /// </summary>
+        /// <unmanaged>dwSubType</unmanaged>
+        /// <unmanaged-short>dwSubType</unmanaged-short>
+        public System.Int32 SubType;
+        /// <summary>
+        /// No documentation.
+        /// </summary>
+        /// <unmanaged>dwKeyboardMode</unmanaged>
+        /// <unmanaged-short>dwKeyboardMode</unmanaged-short>
+        public System.Int32 KeyboardMode;
+        /// <summary>
+        /// No documentation.
+        /// </summary>
+        /// <unmanaged>dwNumberOfFunctionKeys</unmanaged>
+        /// <unmanaged-short>dwNumberOfFunctionKeys</unmanaged-short>
+        public System.Int32 NumberOfFunctionKeys;
+        /// <summary>
+        /// No documentation.
+        /// </summary>
+        /// <unmanaged>dwNumberOfIndicators</unmanaged>
+        /// <unmanaged-short>dwNumberOfIndicators</unmanaged-short>
+        public System.Int32 NumberOfIndicators;
+        /// <summary>
+        /// No documentation.
+        /// </summary>
+        /// <unmanaged>dwNumberOfKeysTotal</unmanaged>
+        /// <unmanaged-short>dwNumberOfKeysTotal</unmanaged-short>
+        public System.Int32 NumberOfKeysTotal;
+    }
+}
