@@ -31,7 +31,9 @@ namespace DXNET.Multimedia
     public class SoundStream : Stream
     {
         private Stream input;
+
         private long startPositionOfData;
+
         private long length;
 
         /// <summary>
@@ -97,8 +99,9 @@ namespace DXNET.Multimedia
                 // Check for "dpds" chunk
                 // Get the dpds decoded packed cumulative bytes
                 var dpdsChunk = Chunk(chunks, "dpds");
-                DecodedPacketsInfo = dpdsChunk.GetDataAsArray<uint>();                
-            } else
+                DecodedPacketsInfo = dpdsChunk.GetDataAsArray<uint>();
+            }
+            else
             {
                 switch (Format.Encoding)
                 {
@@ -110,7 +113,7 @@ namespace DXNET.Multimedia
                     default:
                         ThrowInvalidFileFormat();
                         break;
-                }                
+                }
             }
 
             // Check for "data" chunk
@@ -121,6 +124,11 @@ namespace DXNET.Multimedia
             input.Position = startPositionOfData;
         }
 
+        /// <summary>
+        /// ThrowInvalidFileFormat
+        /// </summary>
+        /// <param name="nestedException"></param>
+        /// <exception cref="InvalidOperationException"></exception>
         protected void ThrowInvalidFileFormat(Exception nestedException = null)
         {
             throw new InvalidOperationException("Invalid " + FileFormatName + " file format", nestedException);
@@ -145,7 +153,7 @@ namespace DXNET.Multimedia
         public DataStream ToDataStream()
         {
             var buffer = new byte[Length];
-            if ( Read(buffer, 0, (int)Length) != Length)
+            if (Read(buffer, 0, (int)Length) != Length)
                 throw new InvalidOperationException("Unable to get a valid DataStream");
 
             return DataStream.Create(buffer, true, true);
@@ -200,15 +208,15 @@ namespace DXNET.Multimedia
         /// The current position within the stream.
         ///   </returns>
         ///   
-        /// <exception cref="T:System.IO.IOException">
+        /// <exception cref="System.IO.IOException">
         /// An I/O error occurs.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.NotSupportedException">
+        /// <exception cref="System.NotSupportedException">
         /// The stream does not support seeking.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.ObjectDisposedException">
+        /// <exception cref="System.ObjectDisposedException">
         /// Methods were called after the stream was closed.
         ///   </exception>
         public override long Position
@@ -223,6 +231,7 @@ namespace DXNET.Multimedia
             }
         }
 
+        /// <inheritdoc/>
         protected override void Dispose(bool disposing)
         {
             if (input != null)
@@ -233,6 +242,13 @@ namespace DXNET.Multimedia
             base.Dispose(disposing);
         }
 
+        /// <summary>
+        /// Chunk
+        /// </summary>
+        /// <param name="chunks"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         protected RiffChunk Chunk(IEnumerable<RiffChunk> chunks, string id)
         {
             RiffChunk chunk = null;
@@ -254,7 +270,7 @@ namespace DXNET.Multimedia
         /// <summary>
         /// When overridden in a derived class, clears all buffers for this stream and causes any buffered data to be written to the underlying device.
         /// </summary>
-        /// <exception cref="T:System.IO.IOException">
+        /// <exception cref="System.IO.IOException">
         /// An I/O error occurs.
         ///   </exception>
         public override void Flush()
@@ -266,19 +282,19 @@ namespace DXNET.Multimedia
         /// When overridden in a derived class, sets the position within the current stream.
         /// </summary>
         /// <param name="offset">A byte offset relative to the <paramref name="origin"/> parameter.</param>
-        /// <param name="origin">A value of type <see cref="T:System.IO.SeekOrigin"/> indicating the reference point used to obtain the new position.</param>
+        /// <param name="origin">A value of type <see cref="System.IO.SeekOrigin"/> indicating the reference point used to obtain the new position.</param>
         /// <returns>
         /// The new position within the current stream.
         /// </returns>
-        /// <exception cref="T:System.IO.IOException">
+        /// <exception cref="System.IO.IOException">
         /// An I/O error occurs.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.NotSupportedException">
+        /// <exception cref="System.NotSupportedException">
         /// The stream does not support seeking, such as if the stream is constructed from a pipe or console output.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.ObjectDisposedException">
+        /// <exception cref="System.ObjectDisposedException">
         /// Methods were called after the stream was closed.
         ///   </exception>
         public override long Seek(long offset, SeekOrigin origin)
@@ -297,7 +313,7 @@ namespace DXNET.Multimedia
                     break;
             }
 
-            if (newPosition < startPositionOfData || newPosition > (startPositionOfData+length))
+            if (newPosition < startPositionOfData || newPosition > (startPositionOfData + length))
                 throw new InvalidOperationException("Cannot seek outside the range of this stream");
 
             return input.Seek(newPosition, SeekOrigin.Begin);
@@ -307,15 +323,15 @@ namespace DXNET.Multimedia
         /// When overridden in a derived class, sets the length of the current stream.
         /// </summary>
         /// <param name="value">The desired length of the current stream in bytes.</param>
-        /// <exception cref="T:System.IO.IOException">
+        /// <exception cref="System.IO.IOException">
         /// An I/O error occurs.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.NotSupportedException">
+        /// <exception cref="System.NotSupportedException">
         /// The stream does not support both writing and seeking, such as if the stream is constructed from a pipe or console output.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.ObjectDisposedException">
+        /// <exception cref="System.ObjectDisposedException">
         /// Methods were called after the stream was closed.
         ///   </exception>
         public override void SetLength(long value)
@@ -332,27 +348,27 @@ namespace DXNET.Multimedia
         /// <returns>
         /// The total number of bytes read into the buffer. This can be less than the number of bytes requested if that many bytes are not currently available, or zero (0) if the end of the stream has been reached.
         /// </returns>
-        /// <exception cref="T:System.ArgumentException">
+        /// <exception cref="System.ArgumentException">
         /// The sum of <paramref name="offset"/> and <paramref name="count"/> is larger than the buffer length.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.ArgumentNullException">
+        /// <exception cref="System.ArgumentNullException">
         ///   <paramref name="buffer"/> is null.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.ArgumentOutOfRangeException">
+        /// <exception cref="System.ArgumentOutOfRangeException">
         ///   <paramref name="offset"/> or <paramref name="count"/> is negative.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.IO.IOException">
+        /// <exception cref="System.IO.IOException">
         /// An I/O error occurs.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.NotSupportedException">
+        /// <exception cref="System.NotSupportedException">
         /// The stream does not support reading.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.ObjectDisposedException">
+        /// <exception cref="System.ObjectDisposedException">
         /// Methods were called after the stream was closed.
         ///   </exception>
         public override int Read(byte[] buffer, int offset, int count)
@@ -367,11 +383,11 @@ namespace DXNET.Multimedia
         /// A long value representing the length of the stream in bytes.
         ///   </returns>
         ///   
-        /// <exception cref="T:System.NotSupportedException">
+        /// <exception cref="System.NotSupportedException">
         /// A class derived from Stream does not support seeking.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.ObjectDisposedException">
+        /// <exception cref="System.ObjectDisposedException">
         /// Methods were called after the stream was closed.
         ///   </exception>
         public override long Length
@@ -385,27 +401,27 @@ namespace DXNET.Multimedia
         /// <param name="buffer">An array of bytes. This method copies <paramref name="count"/> bytes from <paramref name="buffer"/> to the current stream.</param>
         /// <param name="offset">The zero-based byte offset in <paramref name="buffer"/> at which to begin copying bytes to the current stream.</param>
         /// <param name="count">The number of bytes to be written to the current stream.</param>
-        /// <exception cref="T:System.ArgumentException">
+        /// <exception cref="System.ArgumentException">
         /// The sum of <paramref name="offset"/> and <paramref name="count"/> is greater than the buffer length.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.ArgumentNullException">
+        /// <exception cref="System.ArgumentNullException">
         ///   <paramref name="buffer"/> is null.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.ArgumentOutOfRangeException">
+        /// <exception cref="System.ArgumentOutOfRangeException">
         ///   <paramref name="offset"/> or <paramref name="count"/> is negative.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.IO.IOException">
+        /// <exception cref="System.IO.IOException">
         /// An I/O error occurs.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.NotSupportedException">
+        /// <exception cref="System.NotSupportedException">
         /// The stream does not support writing.
         ///   </exception>
         ///   
-        /// <exception cref="T:System.ObjectDisposedException">
+        /// <exception cref="System.ObjectDisposedException">
         /// Methods were called after the stream was closed.
         ///   </exception>
         public override void Write(byte[] buffer, int offset, int count)

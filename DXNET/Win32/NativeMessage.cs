@@ -21,18 +21,45 @@
 
 using System;
 using System.Runtime.InteropServices;
+
 using DXNET.Mathematics.Interop;
 
 namespace DXNET.Win32
 {
+    /// <summary>
+    /// NativeMessage
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public struct NativeMessage
     {
+        /// <summary>
+        /// handle
+        /// </summary>
         public IntPtr handle;
+
+        /// <summary>
+        /// msg
+        /// </summary>
         public uint msg;
+
+        /// <summary>
+        /// wParam
+        /// </summary>
         public IntPtr wParam;
+
+        /// <summary>
+        /// lParam
+        /// </summary>
         public IntPtr lParam;
+
+        /// <summary>
+        /// time
+        /// </summary>
         public uint time;
+
+        /// <summary>
+        /// p
+        /// </summary>
         public RawPoint p;
     }
 }

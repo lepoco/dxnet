@@ -27,7 +27,7 @@ namespace DXNET.Collections
     /// <summary>
     /// Provides <see cref="IEqualityComparer{T}"/> for default value types.
     /// </summary>
-    internal static class EqualityComparer
+    public static class EqualityComparer
     {
         /// <summary>
         /// A default <see cref="IEqualityComparer{T}"/> for <see cref="System.IntPtr"/>.

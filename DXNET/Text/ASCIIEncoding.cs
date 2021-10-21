@@ -22,7 +22,7 @@
 namespace DXNET.Text
 {
     /// <summary>
-    /// Overrides <see cref="System.Text.ASCIIEncoding"/> in order to provide <see cref="ASCIIEncoding"/> for Win8 Modern App.
+    /// Overrides <see cref="System.Text.ASCIIEncoding"/> in order to provide <see cref="System.Text.ASCIIEncoding"/> for Win8 Modern App.
     /// </summary>
     public abstract class Encoding : System.Text.Encoding
     {

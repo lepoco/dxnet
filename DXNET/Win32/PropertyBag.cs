@@ -41,6 +41,7 @@ namespace DXNET.Win32
         {
         }
 
+        /// <inheritdoc/>
         protected override void NativePointerUpdated(IntPtr oldNativePointer)
         {
             base.NativePointerUpdated(oldNativePointer);

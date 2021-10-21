@@ -262,17 +262,24 @@ namespace DXNET
             NativePointer = parentPtr;
         }
 
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
         Result IUnknown.QueryInterface(ref Guid guid, out IntPtr comObject)
         {
             return Marshal.QueryInterface(NativePointer, ref guid, out comObject);
         }
 
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
         int IUnknown.AddReference()
         {
             if (NativePointer == IntPtr.Zero) throw new InvalidOperationException("COM Object pointer is null");
             return Marshal.AddRef(NativePointer);
         }
 
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
         int IUnknown.Release()
         {
             if (NativePointer == IntPtr.Zero) throw new InvalidOperationException("COM Object pointer is null");

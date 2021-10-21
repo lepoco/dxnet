@@ -602,6 +602,7 @@ namespace DXNET
         /// </summary>
         /// <param name="iunknownPtr">an IUnknown pointer to a  managed object.</param>
         /// <returns>The managed object.</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
         public static object GetObjectForIUnknown(IntPtr iunknownPtr)
         {
             return iunknownPtr == IntPtr.Zero ? null : Marshal.GetObjectForIUnknown(iunknownPtr);

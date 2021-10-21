@@ -164,7 +164,7 @@ namespace DXNET
         }
 
         /// <summary>
-        /// Gets or sets the <see cref="T"/> with the specified i.
+        /// Gets or sets the <see langword="T"/> with the specified <see langword="i"/>.
         /// </summary>
         public T this[int i]
         {

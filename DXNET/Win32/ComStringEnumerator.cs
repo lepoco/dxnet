@@ -35,19 +35,23 @@ namespace DXNET.Win32
         private readonly IEnumString enumString;
         private string current;
 
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ComStringEnumerator"/> class.
         /// </summary>
         /// <param name="ptrToIEnumString">The PTR to I enum string.</param>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
         public ComStringEnumerator(IntPtr ptrToIEnumString)
         {
-            enumString = (IEnumString)Marshal.GetObjectForIUnknown(ptrToIEnumString);
+            enumString = Marshal.GetObjectForIUnknown(ptrToIEnumString) as IEnumString;
         }
 
+        /// <inheritdoc/>
         public void Dispose()
         {
         }
 
+        /// <inheritdoc/>
         public bool MoveNext()
         {
             unsafe
@@ -60,26 +64,31 @@ namespace DXNET.Win32
             }
         }
 
+        /// <inheritdoc/>
         public void Reset()
         {
             enumString.Reset();
         }
 
+        /// <inheritdoc/>
         public string Current
         {
             get { return current; }
         }
 
+        /// <inheritdoc/>
         object IEnumerator.Current
         {
             get { return Current; }
         }
 
+        /// <inheritdoc/>
         public IEnumerator<string> GetEnumerator()
         {
             return this;
         }
 
+        /// <inheritdoc/>
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();

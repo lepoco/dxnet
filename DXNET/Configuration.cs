@@ -31,7 +31,7 @@ namespace DXNET
         /// </summary>
         /// <remarks>
         /// Object Tracking is used to track COM object lifecycle creation/dispose. When this option is enabled
-        /// objects can be tracked using <see cref="ObjectTracker"/>. Using Object tracking has a significant
+        /// objects can be tracked using <see cref="Diagnostics.ObjectTracker"/>. Using Object tracking has a significant
         /// impact on performance and should be used only while debugging.
         /// </remarks>
         public static bool EnableObjectTracking = false;

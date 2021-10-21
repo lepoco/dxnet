@@ -23,19 +23,65 @@ using System.Runtime.InteropServices;
 
 namespace DXNET.Win32
 {
+    /// <summary>
+    /// BitmapInfoHeader
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public struct BitmapInfoHeader
     {
+        /// <summary>
+        /// SizeInBytes
+        /// </summary>
         public int SizeInBytes;
+
+        /// <summary>
+        /// Width
+        /// </summary>
         public int Width;
+
+        /// <summary>
+        /// Height
+        /// </summary>
         public int Height;
+
+        /// <summary>
+        /// PlaneCount
+        /// </summary>
         public short PlaneCount;
+
+        /// <summary>
+        /// BitCount
+        /// </summary>
         public short BitCount;
+
+        /// <summary>
+        /// Compression
+        /// </summary>
         public int Compression;
+
+        /// <summary>
+        /// SizeImage
+        /// </summary>
         public int SizeImage;
+
+        /// <summary>
+        /// XPixelsPerMeter
+        /// </summary>
         public int XPixelsPerMeter;
+
+        /// <summary>
+        /// YPixelsPerMeter
+        /// </summary>
         public int YPixelsPerMeter;
+
+        /// <summary>
+        /// ColorUsedCount
+        /// </summary>
         public int ColorUsedCount;
+
+        /// <summary>
+        /// ColorImportantCount
+        /// </summary>
         public int ColorImportantCount;
     }
 }
