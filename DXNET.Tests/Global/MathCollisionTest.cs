@@ -21,30 +21,30 @@
 
 using NUnit.Framework;
 
-
 namespace DXNET.Tests.Global
 {
     [TestFixture]
     public class MathCollisionTest
     {
-        //[Test]
-        //public void ClosestPointPointTriangleTest()
-        //{
-        //    Assert.AreEqual(ClosestPointPointTriangle(new Vector3(0, 0, 0), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(1, 1, 0));
-        //    Assert.AreEqual(ClosestPointPointTriangle(new Vector3(1, 1, 0), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(1, 1, 0));
-        //    Assert.AreEqual(ClosestPointPointTriangle(new Vector3(2, 3, 0), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(2, 2, 0));
-        //    Assert.AreEqual(ClosestPointPointTriangle(new Vector3(4, 1, 0), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(3, 1, 0));
-        //    Assert.AreEqual(ClosestPointPointTriangle(new Vector3(1, 2, 0), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(1.5f, 1.5f, 0));
-        //    Assert.AreEqual(ClosestPointPointTriangle(new Vector3(3, 2, 0), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(2.5f, 1.5f, 0));
-        //    Assert.AreEqual(ClosestPointPointTriangle(new Vector3(2, 0, 0), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(2, 1, 0));
+        [Test]
+        public void ClosestPointPointTriangleTest()
+        {
+            Assert.AreEqual(ClosestPointPointTriangle(new Vector3(0, 0, 0), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(1, 1, 0));
+            Assert.AreEqual(ClosestPointPointTriangle(new Vector3(1, 1, 0), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(1, 1, 0));
+            Assert.AreEqual(ClosestPointPointTriangle(new Vector3(2, 3, 0), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(2, 2, 0));
+            Assert.AreEqual(ClosestPointPointTriangle(new Vector3(4, 1, 0), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(3, 1, 0));
+            Assert.AreEqual(ClosestPointPointTriangle(new Vector3(1, 2, 0), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(1.5f, 1.5f, 0));
+            Assert.AreEqual(ClosestPointPointTriangle(new Vector3(3, 2, 0), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(2.5f, 1.5f, 0));
+            Assert.AreEqual(ClosestPointPointTriangle(new Vector3(2, 0, 0), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(2, 1, 0));
 
-        //    Assert.AreEqual(ClosestPointPointTriangle(new Vector3(2, 1.5f, 1), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(2, 1.5f, 0));
-        //}
-        //private static Vector3 ClosestPointPointTriangle(Vector3 point, Vector3 vertex1, Vector3 vertex2, Vector3 vertex3)
-        //{
-        //    Vector3 result;
-        //    Collision.ClosestPointPointTriangle(ref point, ref vertex1, ref vertex2, ref vertex3, out result);
-        //    return result;
-        //}
+            Assert.AreEqual(ClosestPointPointTriangle(new Vector3(2, 1.5f, 1), new Vector3(1, 1, 0), new Vector3(2, 2, 0), new Vector3(3, 1, 0)), new Vector3(2, 1.5f, 0));
+        }
+        private static Vector3 ClosestPointPointTriangle(Vector3 point, Vector3 vertex1, Vector3 vertex2, Vector3 vertex3)
+        {
+            Vector3 result;
+            Collision.ClosestPointPointTriangle(ref point, ref vertex1, ref vertex2, ref vertex3, out result);
+            
+            return result;
+        }
     }
 }
