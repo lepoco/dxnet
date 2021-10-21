@@ -28,10 +28,19 @@ namespace DXNET
     /// <summary>
     /// A COM Interface Callback
     /// </summary>
-    internal abstract class ComObjectShadow : CppObjectShadow
+    public abstract class ComObjectShadow : CppObjectShadow
     {
+        /// <summary>
+        /// IID_IUnknown
+        /// </summary>
         public static Guid IID_IUnknown = new Guid("00000000-0000-0000-C000-000000000046");
 
+        /// <summary>
+        /// QueryInterfaceImpl
+        /// </summary>
+        /// <param name="guid"></param>
+        /// <param name="output"></param>
+        /// <returns></returns>
         protected int QueryInterfaceImpl(ref Guid guid, out IntPtr output)
         {
             var shadow = (ComObjectShadow)((ShadowContainer)Callback.Shadow).FindShadow(guid);
@@ -45,17 +54,25 @@ namespace DXNET
             return Result.NoInterface.Code;
         }
 
+        /// <summary>
+        /// AddRefImpl
+        /// </summary>
+        /// <returns></returns>
         protected virtual int AddRefImpl()
         {
             return ((IUnknown)Callback).AddReference();
         }
 
+        /// <summary>
+        /// ReleaseImpl
+        /// </summary>
+        /// <returns></returns>
         protected virtual int ReleaseImpl()
         {
             return ((IUnknown)Callback).Release();
         }
 
-        internal class ComObjectVtbl : CppObjectVtbl
+        public class ComObjectVtbl : CppObjectVtbl
         {
             public ComObjectVtbl(int numberOfCallbackMethods)
                 : base(numberOfCallbackMethods + 3)

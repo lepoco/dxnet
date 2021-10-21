@@ -30,7 +30,7 @@ namespace DXNET.Win32
     /// <summary>
     /// An enumerator using internally a <see cref="IEnumString"/>.
     /// </summary>
-    internal class ComStringEnumerator : IEnumerator<string>, IEnumerable<string>
+    public class ComStringEnumerator : IEnumerator<string>, IEnumerable<string>
     {
         private readonly IEnumString enumString;
         private string current;

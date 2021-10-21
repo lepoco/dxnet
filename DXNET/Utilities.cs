@@ -1069,7 +1069,7 @@ namespace DXNET
             int countMultiQuery,
             ref MultiQueryInterface query);
 
-        internal unsafe static void CreateComInstance(Guid clsid, CLSCTX clsctx, Guid riid, ComObject comObject)
+        public unsafe static void CreateComInstance(Guid clsid, CLSCTX clsctx, Guid riid, ComObject comObject)
         {
             MultiQueryInterface localQuery = new MultiQueryInterface()
             {
@@ -1084,7 +1084,7 @@ namespace DXNET
             comObject.NativePointer = localQuery.IUnknownPointer;
         }
 
-        internal unsafe static bool TryCreateComInstance(Guid clsid, CLSCTX clsctx, Guid riid, ComObject comObject)
+        public unsafe static bool TryCreateComInstance(Guid clsid, CLSCTX clsctx, Guid riid, ComObject comObject)
         {
             MultiQueryInterface localQuery = new MultiQueryInterface()
             {
@@ -1102,14 +1102,14 @@ namespace DXNET
         [DllImport("ole32.dll", ExactSpelling = true, EntryPoint = "CoCreateInstance", PreserveSig = true)]
         private static extern Result CoCreateInstance([In, MarshalAs(UnmanagedType.LPStruct)] Guid rclsid, IntPtr pUnkOuter, CLSCTX dwClsContext, [In, MarshalAs(UnmanagedType.LPStruct)] Guid riid, out IntPtr comObject);
 
-        internal static void CreateComInstance(Guid clsid, CLSCTX clsctx, Guid riid, ComObject comObject)
+        public static void CreateComInstance(Guid clsid, CLSCTX clsctx, Guid riid, ComObject comObject)
         {
             var result = CoCreateInstance(clsid, IntPtr.Zero, clsctx, riid, out IntPtr pointer);
             result.CheckError();
             comObject.NativePointer = pointer;
         }
 
-        internal static bool TryCreateComInstance(Guid clsid, CLSCTX clsctx, Guid riid, ComObject comObject)
+        public static bool TryCreateComInstance(Guid clsid, CLSCTX clsctx, Guid riid, ComObject comObject)
         {
             var result = CoCreateInstance(clsid, IntPtr.Zero, clsctx, riid, out IntPtr pointer);
             comObject.NativePointer = pointer;

@@ -26,7 +26,7 @@ using System.Runtime.InteropServices;
 namespace DXNET.Win32
 {
     [Guid("0000000c-0000-0000-C000-000000000046")]
-    internal class ComStreamProxy : CallbackBase, IStream
+    public class ComStreamProxy : CallbackBase, IStream
     {
         private Stream sourceStream;
         byte[] tempBuffer = new byte[0x1000];

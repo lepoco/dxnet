@@ -25,9 +25,13 @@ using System.Runtime.InteropServices;
 
 namespace DXNET
 {
-    internal class CppObjectVtbl
+    /// <summary>
+    /// CppObjectVtbl
+    /// </summary>
+    public class CppObjectVtbl
     {
         private readonly List<Delegate> methods;
+        
         private readonly IntPtr vtbl;
 
         /// <summary>

@@ -27,7 +27,7 @@ namespace DXNET
     /// <summary>
     /// The implementation of this class is filled by InteropBuilder post-building-event.
     /// </summary>
-    internal class Interop
+    public class Interop
     {
         /// <summary>
         /// Provides a fixed statement working with generics.

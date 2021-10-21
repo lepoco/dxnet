@@ -27,7 +27,7 @@ namespace DXNET
     /// <summary>
     /// An Interface shadow callback
     /// </summary>
-    internal abstract class CppObjectShadow : CppObject
+    public abstract class CppObjectShadow : CppObject
     {
         /// <summary>
         /// Gets the callback.
@@ -71,7 +71,13 @@ namespace DXNET
             base.Dispose(disposing);
         }
 
-        internal static T ToShadow<T>(IntPtr thisPtr) where T : CppObjectShadow
+        /// <summary>
+        /// ToShadow
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="thisPtr"></param>
+        /// <returns></returns>
+        public static T ToShadow<T>(IntPtr thisPtr) where T : CppObjectShadow
         {
             unsafe
             {

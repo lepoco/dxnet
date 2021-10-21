@@ -37,5 +37,9 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DXNET\DXNET.csproj" />
+    <ProjectReference Include="..\DXNET.DXGI\DXNET.DXGI.csproj" />
+  </ItemGroup>
 
 </Project>
