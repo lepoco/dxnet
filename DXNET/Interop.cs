@@ -140,10 +140,12 @@ namespace DXNET
             throw new NotImplementedException();
         }
 
-        [Tag("SharpDX.ModuleInit")]
+        [Tag("DXNET.ModuleInit")]
         public static void ModuleInit()
         {
-            // Console.WriteLine("SharpDX Initialized");
+#if DEBUG
+            Console.WriteLine("DXNET Initialized");
+#endif
         }
     }
 }
