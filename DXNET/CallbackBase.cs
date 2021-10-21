@@ -43,6 +43,11 @@ namespace DXNET
             }
         }
 
+        /// <summary>
+        /// AddReference
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="ObjectDisposedException"></exception>
         public int AddReference()
         {
             var old = refCount;
@@ -61,6 +66,10 @@ namespace DXNET
             }
         }
 
+        /// <summary>
+        /// Release
+        /// </summary>
+        /// <returns></returns>
         public int Release()
         {
             var old = refCount;
@@ -83,6 +92,12 @@ namespace DXNET
             }
         }
 
+        /// <summary>
+        /// QueryInterface
+        /// </summary>
+        /// <param name="guid"></param>
+        /// <param name="comObject"></param>
+        /// <returns></returns>
         public Result QueryInterface(ref Guid guid, out IntPtr comObject)
         {
             var container = (ShadowContainer)((ICallbackable)this).Shadow;

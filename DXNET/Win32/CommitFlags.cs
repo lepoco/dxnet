@@ -23,13 +23,35 @@ using System;
 
 namespace DXNET.Win32
 {
+    /// <summary>
+    /// STGC
+    /// </summary>
     [Flags]
     public enum CommitFlags : int
     {
+        /// <summary>
+        /// STGC_DEFAULT
+        /// </summary>
         Default = 0,
+
+        /// <summary>
+        /// STGC_OVERWRITE
+        /// </summary>
         Overwrite = 1,
+
+        /// <summary>
+        /// STGC_ONLYIFCURRENT
+        /// </summary>
         OnlyCurrent = 2,
+
+        /// <summary>
+        /// STGC_DANGEROUSLYCOMMITMERELYTODISKCACHE
+        /// </summary>
         DangerouslyCommitMerelyToDiskCache = 4,
+
+        /// <summary>
+        /// STGC_CONSOLIDATE
+        /// </summary>
         Consolidate = 8
     }
 }

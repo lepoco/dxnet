@@ -20,101 +20,94 @@
 // THE SOFTWARE.
 
 using System;
+using System.Runtime.InteropServices;
 
 namespace DXNET.Win32
 {
+    /// <summary>
+    /// STATSTG
+    /// </summary>
     public partial struct StorageStatistics
     {
         /// <summary>
-        /// No documentation.
+        /// pwcsName
         /// </summary>
-        /// <unmanaged>pwcsName</unmanaged>
-        /// <unmanaged-short>pwcsName</unmanaged-short>
-        public System.String PwcsName;
+        public string PwcsName;
+
         /// <summary>
-        /// No documentation.
+        /// type
         /// </summary>
-        /// <unmanaged>type</unmanaged>
-        /// <unmanaged-short>type</unmanaged-short>
-        public System.Int32 Type;
+        public int Type;
+
         /// <summary>
-        /// No documentation.
+        /// cbSize
         /// </summary>
-        /// <unmanaged>cbSize</unmanaged>
-        /// <unmanaged-short>cbSize</unmanaged-short>
-        public System.Int64 CbSize;
+        public long CbSize;
+
         /// <summary>
-        /// No documentation.
+        /// mtime
         /// </summary>
-        /// <unmanaged>mtime</unmanaged>
-        /// <unmanaged-short>mtime</unmanaged-short>
-        public System.Int64 Mtime;
+        public long Mtime;
+
         /// <summary>
-        /// No documentation.
+        /// ctime
         /// </summary>
-        /// <unmanaged>ctime</unmanaged>
-        /// <unmanaged-short>ctime</unmanaged-short>
-        public System.Int64 Ctime;
+        public long Ctime;
+
         /// <summary>
-        /// No documentation.
+        /// atime
         /// </summary>
-        /// <unmanaged>atime</unmanaged>
-        /// <unmanaged-short>atime</unmanaged-short>
-        public System.Int64 Atime;
+        public long Atime;
+
         /// <summary>
-        /// No documentation.
+        /// grfMode
         /// </summary>
-        /// <unmanaged>grfMode</unmanaged>
-        /// <unmanaged-short>grfMode</unmanaged-short>
-        public System.Int32 GrfMode;
+        public int GrfMode;
+
         /// <summary>
-        /// No documentation.
+        /// grfLocksSupported
         /// </summary>
-        /// <unmanaged>grfLocksSupported</unmanaged>
-        /// <unmanaged-short>grfLocksSupported</unmanaged-short>
-        public System.Int32 GrfLocksSupported;
+        public int GrfLocksSupported;
+
         /// <summary>
-        /// No documentation.
+        /// clsid
         /// </summary>
-        /// <unmanaged>clsid</unmanaged>
-        /// <unmanaged-short>clsid</unmanaged-short>
-        public System.Guid Clsid;
+        public Guid Clsid;
+
         /// <summary>
-        /// No documentation.
+        /// grfStateBits
         /// </summary>
-        /// <unmanaged>grfStateBits</unmanaged>
-        /// <unmanaged-short>grfStateBits</unmanaged-short>
-        public System.Int32 GrfStateBits;
+        public int GrfStateBits;
+
         /// <summary>
-        /// No documentation.
+        /// reserved
         /// </summary>
-        /// <unmanaged>reserved</unmanaged>
-        /// <unmanaged-short>reserved</unmanaged-short>
-        public System.Int32 Reserved;
-        [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential, Pack = 0, CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
+        public int Reserved;
+        
+        [StructLayout(LayoutKind.Sequential, Pack = 0, CharSet = CharSet.Unicode)]
         internal partial struct __Native
         {
-            public System.IntPtr PwcsName;
-            public System.Int32 Type;
-            public System.Int64 CbSize;
-            public System.Int64 Mtime;
-            public System.Int64 Ctime;
-            public System.Int64 Atime;
-            public System.Int32 GrfMode;
-            public System.Int32 GrfLocksSupported;
-            public System.Guid Clsid;
-            public System.Int32 GrfStateBits;
-            public System.Int32 Reserved;
+            public IntPtr PwcsName;
+            public int Type;
+            public long CbSize;
+            public long Mtime;
+            public long Ctime;
+            public long Atime;
+            public int GrfMode;
+            public int GrfLocksSupported;
+            public Guid Clsid;
+            public int GrfStateBits;
+            public int Reserved;
         }
 
         internal unsafe void __MarshalFree(ref __Native @ref)
         {
-            System.Runtime.InteropServices.Marshal.FreeHGlobal(@ref.PwcsName);
+            Marshal.FreeHGlobal(@ref.PwcsName);
         }
 
         internal unsafe void __MarshalFrom(ref __Native @ref)
         {
-            PwcsName = System.Runtime.InteropServices.Marshal.PtrToStringUni(@ref.PwcsName);
+            PwcsName = Marshal.PtrToStringUni(@ref.PwcsName);
             Type = @ref.Type;
             CbSize = @ref.CbSize;
             Mtime = @ref.Mtime;
@@ -129,7 +122,7 @@ namespace DXNET.Win32
 
         internal unsafe void __MarshalTo(ref __Native @ref)
         {
-            @ref.PwcsName = System.Runtime.InteropServices.Marshal.StringToHGlobalUni(PwcsName);
+            @ref.PwcsName = Marshal.StringToHGlobalUni(PwcsName);
             @ref.Type = Type;
             @ref.CbSize = CbSize;
             @ref.Mtime = Mtime;

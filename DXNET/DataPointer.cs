@@ -76,17 +76,20 @@ namespace DXNET
             get { return Equals(Zero); }
         }
 
+        /// <inheritdoc/>
         public bool Equals(DataPointer other)
         {
             return Pointer.Equals(other.Pointer) && Size == other.Size;
         }
 
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
             return obj is DataPointer && Equals((DataPointer) obj);
         }
 
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
             unchecked

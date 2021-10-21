@@ -21,7 +21,10 @@
 
 namespace DXNET.Direct3D
 {
-    public enum PrimitiveTopology : System.Int32
+    /// <summary>
+    /// D3D_PRIMITIVE_TOPOLOGY
+    /// </summary>
+    public enum PrimitiveTopology : int
     {
         /// <summary>
         /// No documentation.

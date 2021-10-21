@@ -27,7 +27,7 @@ namespace DXNET
     public static class Configuration
     {
         /// <summary>
-        /// Enables or disables object tracking. Default is disabled (false).
+        /// Enables or disables object tracking. Default is disabled <see langword="false"/>.
         /// </summary>
         /// <remarks>
         /// Object Tracking is used to track COM object lifecycle creation/dispose. When this option is enabled

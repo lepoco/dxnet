@@ -1,4 +1,4 @@
-// Copyright (c) 2021 DXNET - Pomianowski Leszek & Contributors
+﻿// Copyright (c) 2021 DXNET - Pomianowski Leszek & Contributors
 // Copyright (c) 2010-2019 SharpDX - Alexandre Mutel & SharpDX Contributors
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,16 +19,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-namespace DXNET.XInput
+namespace DXNET.Win32
 {
     /// <summary>
-    /// The <see cref="DXNET.XInput"/> namespace provides a managed XInput API.
+    /// ErrorCodeHelper
     /// </summary>
-    /// <msdn-id>hh405053</msdn-id>
-    /// <unmanaged>XInput</unmanaged>	
-    /// <unmanaged-short>XInput</unmanaged-short>	
-    [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    class NamespaceDoc
+    public partial class ErrorCodeHelper
     {
+        /// <summary>
+        /// Converts a win32 error code to a <see cref="Result"/>.
+        /// </summary>
+        /// <param name="errorCode">The error code.</param>
+        /// <returns>A HRESULT code</returns>
+        public static Result ToResult(ErrorCode errorCode)
+        {
+            return ToResult((int)errorCode);
+        }
+
+        /// <summary>
+        /// Converts a win32 error code to a <see cref="Result"/>.
+        /// </summary>
+        /// <param name="errorCode">The error code.</param>
+        /// <returns>A HRESULT code</returns>
+        public static Result ToResult(int errorCode)
+        {
+            return new Result(((errorCode <= 0) ? unchecked((uint)errorCode) : ((unchecked((uint)errorCode) & 0x0000FFFF) | 0x80070000)));
+        }
     }
 }

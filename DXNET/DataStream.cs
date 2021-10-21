@@ -76,7 +76,7 @@ namespace DXNET
             {
                 System.Diagnostics.Debug.Assert(buffer.GetBufferSize() > 0);
 
-                _buffer = (byte*) buffer.GetBufferPointer();
+                _buffer = (byte*)buffer.GetBufferPointer();
                 _size = buffer.GetBufferSize();
                 _canRead = true;
                 _canWrite = true;
@@ -85,7 +85,7 @@ namespace DXNET
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DXNET.DataStream"/> class, using a managed buffer as a backing store.
+        /// Initializes a new instance of the <see cref="DataStream"/> class, using a managed buffer as a backing store.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="userBuffer">A managed array to be used as a backing store.</param>
@@ -125,7 +125,7 @@ namespace DXNET
         }
 
         /// <summary>
-        ///   Initializes a new instance of the <see cref = "SharpDX.DataStream" /> class, and allocates a new buffer to use as a backing store.
+        ///   Initializes a new instance of the <see cref = "DataStream" /> class, and allocates a new buffer to use as a backing store.
         /// </summary>
         /// <param name = "sizeInBytes">The size of the buffer to be allocated, in bytes.</param>
         /// <param name = "canRead">
@@ -138,7 +138,7 @@ namespace DXNET
             {
                 System.Diagnostics.Debug.Assert(sizeInBytes > 0);
 
-                _buffer = (byte*) Utilities.AllocateMemory(sizeInBytes);
+                _buffer = (byte*)Utilities.AllocateMemory(sizeInBytes);
                 _size = sizeInBytes;
                 _ownsBuffer = true;
                 _canRead = canRead;
@@ -155,7 +155,7 @@ namespace DXNET
         }
 
         /// <summary>
-        ///   Initializes a new instance of the <see cref = "SharpDX.DataStream" /> class, using an unmanaged buffer as a backing store.
+        ///   Initializes a new instance of the <see cref = "DataStream" /> class, using an unmanaged buffer as a backing store.
         /// </summary>
         /// <param name = "userBuffer">A pointer to the buffer to be used as a backing store.</param>
         /// <param name = "sizeInBytes">The size of the buffer provided, in bytes.</param>
@@ -169,13 +169,21 @@ namespace DXNET
             {
                 System.Diagnostics.Debug.Assert(userBuffer != IntPtr.Zero);
                 System.Diagnostics.Debug.Assert(sizeInBytes > 0);
-                _buffer = (byte*) userBuffer.ToPointer();
+                _buffer = (byte*)userBuffer.ToPointer();
                 _size = sizeInBytes;
                 _canRead = canRead;
                 _canWrite = canWrite;
             }
         }
 
+        /// <summary>
+        /// DataStream
+        /// </summary>
+        /// <param name="dataPointer"></param>
+        /// <param name="sizeInBytes"></param>
+        /// <param name="canRead"></param>
+        /// <param name="canWrite"></param>
+        /// <param name="handle"></param>
         internal unsafe DataStream(void* dataPointer, int sizeInBytes, bool canRead, bool canWrite, GCHandle handle)
         {
             System.Diagnostics.Debug.Assert(sizeInBytes > 0);
@@ -187,24 +195,35 @@ namespace DXNET
             _ownsBuffer = false;
         }
 
+        /// <summary>
+        /// DataStream
+        /// </summary>
+        /// <param name="buffer"></param>
+        /// <param name="sizeInBytes"></param>
+        /// <param name="canRead"></param>
+        /// <param name="canWrite"></param>
+        /// <param name="makeCopy"></param>
         internal unsafe DataStream(void* buffer, int sizeInBytes, bool canRead, bool canWrite, bool makeCopy)
         {
             System.Diagnostics.Debug.Assert(sizeInBytes > 0);
             if (makeCopy)
             {
-                _buffer = (byte*) Utilities.AllocateMemory(sizeInBytes);
-                Utilities.CopyMemory((IntPtr) _buffer, (IntPtr) buffer, sizeInBytes);
+                _buffer = (byte*)Utilities.AllocateMemory(sizeInBytes);
+                Utilities.CopyMemory((IntPtr)_buffer, (IntPtr)buffer, sizeInBytes);
             }
             else
             {
-                _buffer = (byte*) buffer;
+                _buffer = (byte*)buffer;
             }
             _size = sizeInBytes;
             _canRead = canRead;
             _canWrite = canWrite;
             _ownsBuffer = makeCopy;
         }
-        
+
+        /// <summary>
+        /// DataStream
+        /// </summary>
         ~DataStream()
         {
             Dispose(false);
@@ -213,7 +232,7 @@ namespace DXNET
         /// <summary>
         /// Releases unmanaged and - optionally - managed resources
         /// </summary>
-        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <see langword="false"/> to release only unmanaged resources.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -241,7 +260,7 @@ namespace DXNET
         /// <summary>
         ///   Not supported.
         /// </summary>
-        /// <exception cref = "T:System.NotSupportedException">Always thrown.</exception>
+        /// <exception cref = "NotSupportedException">Always thrown.</exception>
         public override void Flush()
         {
             throw new NotSupportedException("DataStream objects cannot be flushed.");
@@ -257,7 +276,7 @@ namespace DXNET
         /// </remarks>
         /// <typeparam name = "T">The type of the value to be read from the stream.</typeparam>
         /// <returns>The value that was read.</returns>
-        /// <exception cref = "T:System.NotSupportedException">This stream does not support reading.</exception>
+        /// <exception cref = "NotSupportedException">This stream does not support reading.</exception>
         public T Read<T>() where T : struct
         {
             unsafe
@@ -267,7 +286,7 @@ namespace DXNET
 
                 byte* from = _buffer + _position;
                 T result = default(T);
-                _position = (byte*) Utilities.ReadAndPosition((IntPtr)from, ref result) - _buffer;
+                _position = (byte*)Utilities.ReadAndPosition((IntPtr)from, ref result) - _buffer;
                 return result;
             }
         }
@@ -294,7 +313,7 @@ namespace DXNET
         ///   the data read from the current stream.</param>
         /// <param name = "count">The maximum number of bytes to be read from the current stream.</param>
         /// <returns>The number of bytes read from the stream.</returns>
-        /// <exception cref = "T:System.NotSupportedException">This stream does not support reading.</exception>
+        /// <exception cref = "NotSupportedException">This stream does not support reading.</exception>
         public override int Read(byte[] buffer, int offset, int count)
         {
             int minCount = (int)Math.Min(RemainingLength, count);
@@ -335,7 +354,7 @@ namespace DXNET
 
                 byte* from = _buffer + _position;
                 var result = new T[count];
-                _position = (byte*) Utilities.Read((IntPtr)from, result, 0, count) - _buffer;
+                _position = (byte*)Utilities.Read((IntPtr)from, result, 0, count) - _buffer;
                 return result;
             }
         }
@@ -353,7 +372,7 @@ namespace DXNET
         ///   the data read from the current stream.</param>
         /// <param name = "count">The number of values to be read from the current stream.</param>
         /// <returns>The number of bytes read from the stream.</returns>
-        /// <exception cref = "T:System.NotSupportedException">This stream does not support reading.</exception>
+        /// <exception cref = "NotSupportedException">This stream does not support reading.</exception>
         public int ReadRange<T>(T[] buffer, int offset, int count) where T : struct
         {
             unsafe
@@ -363,14 +382,14 @@ namespace DXNET
 
                 var oldPosition = _position;
                 _position = (byte*)Utilities.Read((IntPtr)(_buffer + _position), buffer, offset, count) - _buffer;
-                return (int) (_position - oldPosition);
+                return (int)(_position - oldPosition);
             }
         }
 
         /// <summary>
         ///   Sets the position within the current stream.
         /// </summary>
-        /// <exception cref = "T:System.InvalidOperationException">Attempted to seek outside of the bounds of the stream.</exception>
+        /// <exception cref = "InvalidOperationException">Attempted to seek outside of the bounds of the stream.</exception>
         public override long Seek(long offset, SeekOrigin origin)
         {
             long targetPosition = 0;
@@ -403,7 +422,7 @@ namespace DXNET
         ///   Not supported.
         /// </summary>
         /// <param name = "value">Always ignored.</param>
-        /// <exception cref = "T:System.NotSupportedException">Always thrown.</exception>
+        /// <exception cref = "NotSupportedException">Always thrown.</exception>
         public override void SetLength(long value)
         {
             throw new NotSupportedException("DataStream objects cannot be resized.");
@@ -419,14 +438,14 @@ namespace DXNET
         /// </remarks>
         /// <typeparam name = "T">The type of the value to be written to the stream.</typeparam>
         /// <param name = "value">The value to write to the stream.</param>
-        /// <exception cref = "T:System.NotSupportedException">The stream does not support writing.</exception>
+        /// <exception cref = "NotSupportedException">The stream does not support writing.</exception>
         public void Write<T>(T value) where T : struct
         {
             if (!_canWrite)
                 throw new NotSupportedException();
             unsafe
             {
-                _position = (byte*) Utilities.WriteAndPosition((IntPtr)(_buffer + _position), ref value) - _buffer;
+                _position = (byte*)Utilities.WriteAndPosition((IntPtr)(_buffer + _position), ref value) - _buffer;
             }
         }
 
@@ -441,7 +460,7 @@ namespace DXNET
         /// <param name = "buffer">An array of bytes. This method copies count bytes from buffer to the current stream.</param>
         /// <param name = "offset">The zero-based byte offset in buffer at which to begin copying bytes to the current stream.</param>
         /// <param name = "count">The number of bytes to be written to the current stream.</param>
-        /// <exception cref = "T:System.NotSupportedException">This stream does not support writing.</exception>
+        /// <exception cref = "NotSupportedException">This stream does not support writing.</exception>
         public override void Write(byte[] buffer, int offset, int count)
         {
             WriteRange(buffer, offset, count);
@@ -457,11 +476,11 @@ namespace DXNET
         {
             unsafe
             {
-                Utilities.CopyMemory((IntPtr) (_buffer + _position), new IntPtr((byte*) buffer + offset), count);
+                Utilities.CopyMemory((IntPtr)(_buffer + _position), new IntPtr((byte*)buffer + offset), count);
                 _position += count;
             }
         }
-        
+
         /// <summary>
         ///   Writes an array of values to the current stream, and advances the current position
         ///   within this stream by the number of bytes written.
@@ -471,7 +490,7 @@ namespace DXNET
         /// A client must carefully not read/write above the size of this datastream.
         /// </remarks>
         /// <param name = "data">An array of values to be written to the current stream.</param>
-        /// <exception cref = "T:System.NotSupportedException">This stream does not support writing.</exception>
+        /// <exception cref = "NotSupportedException">This stream does not support writing.</exception>
         public void WriteRange<T>(T[] data) where T : struct
         {
             WriteRange(data, 0, data.Length);
@@ -487,7 +506,7 @@ namespace DXNET
         /// </remarks>
         /// <param name = "source">A pointer to the location to start copying from.</param>
         /// <param name = "count">The number of bytes to copy from source to the current stream.</param>
-        /// <exception cref = "T:System.NotSupportedException">This stream does not support writing.</exception>
+        /// <exception cref = "NotSupportedException">This stream does not support writing.</exception>
         public void WriteRange(IntPtr source, long count)
         {
             unsafe
@@ -501,7 +520,7 @@ namespace DXNET
                 System.Diagnostics.Debug.Assert((_position + count) <= _size);
 
                 // TODO: use Interop.memcpy
-                Utilities.CopyMemory((IntPtr) (_buffer + _position), source, (int) count);
+                Utilities.CopyMemory((IntPtr)(_buffer + _position), source, (int)count);
                 _position += count;
             }
         }
@@ -519,7 +538,7 @@ namespace DXNET
         /// <param name = "offset">The zero-based offset in data at which to begin copying values to the current stream.</param>
         /// <param name = "count">The number of values to be written to the current stream. If this is zero,
         ///   all of the contents <paramref name = "data" /> will be written.</param>
-        /// <exception cref = "T:System.NotSupportedException">This stream does not support writing.</exception>
+        /// <exception cref = "NotSupportedException">This stream does not support writing.</exception>
         public void WriteRange<T>(T[] data, int offset, int count) where T : struct
         {
             unsafe
@@ -527,7 +546,7 @@ namespace DXNET
                 if (!_canWrite)
                     throw new NotSupportedException();
 
-                _position = (byte*) Utilities.Write((IntPtr)(_buffer + _position), data, offset, count) - _buffer;
+                _position = (byte*)Utilities.Write((IntPtr)(_buffer + _position), data, offset, count) - _buffer;
             }
         }
 
@@ -535,7 +554,7 @@ namespace DXNET
         ///   Gets a value indicating whether the current stream supports reading.
         /// </summary>
         /// <value>
-        ///   <c>true</c> if the stream supports reading; otherwise, <c>false</c>.</value>
+        /// <see langword="true"/> if the stream supports reading; otherwise, <see langword="false"/>.</value>
         public override bool CanRead
         {
             get { return _canRead; }
@@ -544,7 +563,7 @@ namespace DXNET
         /// <summary>
         ///   Gets a value indicating whether the current stream supports seeking.
         /// </summary>
-        /// <value>Always <c>true</c>.</value>
+        /// <value>Always <see langword="true"/>.</value>
         public override bool CanSeek
         {
             get { return true; }
@@ -554,7 +573,7 @@ namespace DXNET
         ///   Gets a value indicating whether the current stream supports writing.
         /// </summary>
         /// <value>
-        ///   <c>true</c> if the stream supports writing; otherwise, <c>false</c>.</value>
+        /// <see langword="true"/> if the stream supports writing; otherwise, <see langword="false"/>.</value>
         public override bool CanWrite
         {
             get { return _canWrite; }
@@ -606,7 +625,7 @@ namespace DXNET
             {
                 unsafe
                 {
-                    return (IntPtr) (_buffer + _position);
+                    return (IntPtr)(_buffer + _position);
                 }
             }
         }
@@ -621,7 +640,7 @@ namespace DXNET
         }
 
         /// <summary>
-        /// Performs an explicit conversion from <see cref="DXNET.DataStream"/> to <see cref="DXNET.DataPointer"/>.
+        /// Performs an explicit conversion from <see cref="DataStream"/> to <see cref="DXNET.DataPointer"/>.
         /// </summary>
         /// <param name="from">The from value.</param>
         /// <returns>The result of the conversion.</returns>

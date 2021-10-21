@@ -22,6 +22,7 @@
 #if !WINDOWS_UWP
 using System;
 using System.Runtime.InteropServices;
+
 using DXNET.Mathematics.Interop;
 
 namespace DXNET.XInput

@@ -20,27 +20,24 @@
 // THE SOFTWARE.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 namespace DXNET.XInput
 {
-    [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential, Pack = 0, CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
+    /// <summary>
+    /// State
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 0, CharSet = CharSet.Unicode)]
     public partial struct State
     {
         /// <summary>
-        /// No documentation.
+        /// dwPacketNumber
         /// </summary>
-        /// <unmanaged>dwPacketNumber</unmanaged>
-        /// <unmanaged-short>dwPacketNumber</unmanaged-short>
-        public System.Int32 PacketNumber;
+        public int PacketNumber;
+
         /// <summary>
-        /// No documentation.
+        /// Gamepad
         /// </summary>
-        /// <unmanaged>Gamepad</unmanaged>
-        /// <unmanaged-short>Gamepad</unmanaged-short>
-        public DXNET.XInput.Gamepad Gamepad;
+        public Gamepad Gamepad;
     }
 }

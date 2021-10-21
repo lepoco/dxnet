@@ -30,7 +30,11 @@ namespace DXNET
     /// </summary>
     public class ComArray : DisposeBase, IEnumerable
     {
+        /// <summary>
+        /// values
+        /// </summary>
         protected ComObject[] values;
+
         private IntPtr nativeBuffer;
 
         /// <summary>
@@ -46,7 +50,7 @@ namespace DXNET
                 int length = array.Length;
                 values = new ComObject[length];
                 nativeBuffer = Utilities.AllocateMemory(length * Utilities.SizeOf<IntPtr>());
-                for(int i = 0; i < length; i++)
+                for (int i = 0; i < length; i++)
                     Set(i, array[i]);
             }
         }
@@ -116,6 +120,10 @@ namespace DXNET
             }
         }
 
+        /// <summary>
+        /// Dispose
+        /// </summary>
+        /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -170,6 +178,10 @@ namespace DXNET
             }
         }
 
+        /// <summary>
+        /// GetEnumerator
+        /// </summary>
+        /// <returns></returns>
         public new IEnumerator<T> GetEnumerator()
         {
             return new ArrayEnumerator<T>(values.GetEnumerator());
@@ -179,25 +191,42 @@ namespace DXNET
         {
             private readonly IEnumerator enumerator;
 
+            /// <summary>
+            /// ArrayEnumerator
+            /// </summary>
+            /// <param name="enumerator"></param>
             public ArrayEnumerator(IEnumerator enumerator)
             {
                 this.enumerator = enumerator;
             }
 
+            /// <summary>
+            /// Dispose
+            /// </summary>
             public void Dispose()
             {
             }
 
+            /// <summary>
+            /// MoveNext
+            /// </summary>
+            /// <returns></returns>
             public bool MoveNext()
             {
                 return enumerator.MoveNext();
             }
 
+            /// <summary>
+            /// Reset
+            /// </summary>
             public void Reset()
             {
                 enumerator.Reset();
             }
 
+            /// <summary>
+            /// Current
+            /// </summary>
             public T1 Current
             {
                 get

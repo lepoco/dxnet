@@ -24,6 +24,9 @@ using System.Runtime.InteropServices;
 
 namespace DXNET.Direct3D
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Guid("8BA5FB08-5195-40e2-AC58-0D989C3A0102")]
     public partial class Blob : DXNET.ComObject
     {

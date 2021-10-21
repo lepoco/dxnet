@@ -26,55 +26,46 @@ namespace DXNET.Direct3D
 {
     /// <unmanaged>D3D_MIN_PRECISION</unmanaged>
     /// <unmanaged-short>D3D_MIN_PRECISION</unmanaged-short>
-    public enum MinimumPrecision : System.Int32
+    public enum MinimumPrecision : int
     {
         /// <summary>
-        /// No documentation.
+        /// D3D_MIN_PRECISION_DEFAULT
         /// </summary>
-        /// <unmanaged>D3D_MIN_PRECISION_DEFAULT</unmanaged>
-        /// <unmanaged-short>D3D_MIN_PRECISION_DEFAULT</unmanaged-short>
-        MinimumPrecisionDefault = unchecked((System.Int32)(0)),
+        MinimumPrecisionDefault = 0,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_MIN_PRECISION_FLOAT_16
         /// </summary>
-        /// <unmanaged>D3D_MIN_PRECISION_FLOAT_16</unmanaged>
-        /// <unmanaged-short>D3D_MIN_PRECISION_FLOAT_16</unmanaged-short>
-        MinimumPrecisionFloat16 = unchecked((System.Int32)(1)),
+        MinimumPrecisionFloat16,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_MIN_PRECISION_FLOAT_2_8
         /// </summary>
-        /// <unmanaged>D3D_MIN_PRECISION_FLOAT_2_8</unmanaged>
-        /// <unmanaged-short>D3D_MIN_PRECISION_FLOAT_2_8</unmanaged-short>
-        MinimumPrecisionFloat28 = unchecked((System.Int32)(2)),
+        MinimumPrecisionFloat28,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_MIN_PRECISION_RESERVED
         /// </summary>
-        /// <unmanaged>D3D_MIN_PRECISION_RESERVED</unmanaged>
-        /// <unmanaged-short>D3D_MIN_PRECISION_RESERVED</unmanaged-short>
-        MinimumPrecisionReserved = unchecked((System.Int32)(3)),
+        MinimumPrecisionReserved,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_MIN_PRECISION_SINT_16
         /// </summary>
-        /// <unmanaged>D3D_MIN_PRECISION_SINT_16</unmanaged>
-        /// <unmanaged-short>D3D_MIN_PRECISION_SINT_16</unmanaged-short>
-        MinimumPrecisionSInt16 = unchecked((System.Int32)(4)),
+        MinimumPrecisionSInt16,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_MIN_PRECISION_UINT_16
         /// </summary>
-        /// <unmanaged>D3D_MIN_PRECISION_UINT_16</unmanaged>
-        /// <unmanaged-short>D3D_MIN_PRECISION_UINT_16</unmanaged-short>
-        MinimumPrecisionUInt16 = unchecked((System.Int32)(5)),
+        MinimumPrecisionUInt16,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_MIN_PRECISION_ANY_16
         /// </summary>
-        /// <unmanaged>D3D_MIN_PRECISION_ANY_16</unmanaged>
-        /// <unmanaged-short>D3D_MIN_PRECISION_ANY_16</unmanaged-short>
-        MinimumPrecisionAny16 = unchecked((System.Int32)(240)),
+        MinimumPrecisionAny16 = 240,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_MIN_PRECISION_ANY_10
         /// </summary>
-        /// <unmanaged>D3D_MIN_PRECISION_ANY_10</unmanaged>
-        /// <unmanaged-short>D3D_MIN_PRECISION_ANY_10</unmanaged-short>
-        MinimumPrecisionAny10 = unchecked((System.Int32)(241))
+        MinimumPrecisionAny10 = 241
     }
 }

@@ -25,48 +25,10 @@ using System.Runtime.InteropServices;
 namespace DXNET.Direct3D
 {
     /// <summary>
-    /// D3D_INTERPOLATION
+    /// DestructionNotifier
     /// </summary>
-    public enum InterpolationMode : int
+    [Guid("a06eb39a-50da-425b-8c31-4eecd6c270f3")]
+    public partial interface DestructionNotifier : DXNET.IUnknown
     {
-        /// <summary>
-        /// D3D_INTERPOLATION_UNDEFINED
-        /// </summary>
-        Undefined = 0,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_CONSTANT
-        /// </summary>
-        Constant = 1,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR
-        /// </summary>
-        Linear = 2,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_CENTROID
-        /// </summary>
-        LinearCentroid = 3,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE
-        /// </summary>
-        LinearNoperspective = 4,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE_CENTROID
-        /// </summary>
-        LinearNoperspectiveCentroid = 5,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_SAMPLE
-        /// </summary>
-        LinearSample = 6,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE_SAMPLE
-        /// </summary>
-        LinearNoperspectiveSample = 7
     }
 }

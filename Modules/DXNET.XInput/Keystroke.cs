@@ -19,46 +19,39 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 namespace DXNET.XInput
 {
-    [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential, Pack = 0, CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
+    /// <summary>
+    /// Keystroke
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential, Pack = 0, CharSet = CharSet.Unicode)]
     public partial struct Keystroke
     {
         /// <summary>
-        /// No documentation.
+        /// VirtualKey
         /// </summary>
-        /// <unmanaged>VirtualKey</unmanaged>
-        /// <unmanaged-short>VirtualKey</unmanaged-short>
-        public DXNET.XInput.GamepadKeyCode VirtualKey;
+        public GamepadKeyCode VirtualKey;
+
         /// <summary>
-        /// No documentation.
+        /// Unicode
         /// </summary>
-        /// <unmanaged>Unicode</unmanaged>
-        /// <unmanaged-short>Unicode</unmanaged-short>
-        public System.Char Unicode;
+        public char Unicode;
+
         /// <summary>
-        /// No documentation.
+        /// Flags
         /// </summary>
-        /// <unmanaged>Flags</unmanaged>
-        /// <unmanaged-short>Flags</unmanaged-short>
-        public DXNET.XInput.KeyStrokeFlags Flags;
+        public KeyStrokeFlags Flags;
+
         /// <summary>
-        /// No documentation.
+        /// UserIndex
         /// </summary>
-        /// <unmanaged>UserIndex</unmanaged>
-        /// <unmanaged-short>UserIndex</unmanaged-short>
-        public DXNET.XInput.UserIndex UserIndex;
+        public UserIndex UserIndex;
+
         /// <summary>
-        /// No documentation.
+        /// HidCode
         /// </summary>
-        /// <unmanaged>HidCode</unmanaged>
-        /// <unmanaged-short>HidCode</unmanaged-short>
-        public System.Byte HidCode;
+        public byte HidCode;
     }
 }

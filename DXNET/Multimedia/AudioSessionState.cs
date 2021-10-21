@@ -18,55 +18,31 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
+// -----------------------------------------------------------------------------
+// Original code from NAudio project. http://naudio.codeplex.com/
+// Greetings to Mark Heath.
+// -----------------------------------------------------------------------------
 
-using System;
-using System.Runtime.InteropServices;
-
-namespace DXNET.Direct3D
+namespace DXNET.Multimedia
 {
     /// <summary>
-    /// D3D_INTERPOLATION
+    /// AudioSessionState
     /// </summary>
-    public enum InterpolationMode : int
+    public enum AudioSessionState : int
     {
         /// <summary>
-        /// D3D_INTERPOLATION_UNDEFINED
+        /// AudioSessionStateInactive
         /// </summary>
-        Undefined = 0,
+        AudioSessionStateInactive = 0,
 
         /// <summary>
-        /// D3D_INTERPOLATION_CONSTANT
+        /// AudioSessionStateActive
         /// </summary>
-        Constant = 1,
+        AudioSessionStateActive,
 
         /// <summary>
-        /// D3D_INTERPOLATION_LINEAR
+        /// AudioSessionStateExpired
         /// </summary>
-        Linear = 2,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_CENTROID
-        /// </summary>
-        LinearCentroid = 3,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE
-        /// </summary>
-        LinearNoperspective = 4,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE_CENTROID
-        /// </summary>
-        LinearNoperspectiveCentroid = 5,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_SAMPLE
-        /// </summary>
-        LinearSample = 6,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE_SAMPLE
-        /// </summary>
-        LinearNoperspectiveSample = 7
+        AudioSessionStateExpired
     }
 }

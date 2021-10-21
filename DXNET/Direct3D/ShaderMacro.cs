@@ -20,14 +20,24 @@
 // THE SOFTWARE.
 
 using System;
+using System.Runtime.InteropServices;
 
 namespace DXNET.Direct3D
 {
+    /// <summary>
+    /// D3D_SHADER_MACRO
+    /// </summary>
     public partial struct ShaderMacro : IEquatable<ShaderMacro>
     {
-        public System.String Name;
+        /// <summary>
+        /// Name
+        /// </summary>
+        public string Name;
 
-        public System.String Definition;
+        /// <summary>
+        /// Definition
+        /// </summary>
+        public string Definition;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ShaderMacro"/> struct. 
@@ -44,11 +54,13 @@ namespace DXNET.Direct3D
             Definition = definition == null ? null : definition.ToString();
         }
 
+        /// <inheritdoc/>
         public bool Equals(ShaderMacro other)
         {
             return string.Equals(this.Name, other.Name) && string.Equals(this.Definition, other.Definition);
         }
 
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -56,6 +68,7 @@ namespace DXNET.Direct3D
             return obj is ShaderMacro && Equals((ShaderMacro)obj);
         }
 
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
             unchecked
@@ -64,17 +77,19 @@ namespace DXNET.Direct3D
             }
         }
 
+        /// <inheritdoc/>
         public static bool operator ==(ShaderMacro left, ShaderMacro right)
         {
             return left.Equals(right);
         }
 
+        /// <inheritdoc/>
         public static bool operator !=(ShaderMacro left, ShaderMacro right)
         {
             return !left.Equals(right);
         }
 
-        [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential, Pack = 0, CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
+        [StructLayout(LayoutKind.Sequential, Pack = 0, CharSet = CharSet.Unicode)]
         internal partial struct __Native
         {
             public System.IntPtr Name;
@@ -83,20 +98,20 @@ namespace DXNET.Direct3D
 
         internal unsafe void __MarshalFree(ref __Native @ref)
         {
-            System.Runtime.InteropServices.Marshal.FreeHGlobal(@ref.Name);
-            System.Runtime.InteropServices.Marshal.FreeHGlobal(@ref.Definition);
+            Marshal.FreeHGlobal(@ref.Name);
+            Marshal.FreeHGlobal(@ref.Definition);
         }
 
         internal unsafe void __MarshalFrom(ref __Native @ref)
         {
-            Name = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(@ref.Name);
-            Definition = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(@ref.Definition);
+            Name = Marshal.PtrToStringAnsi(@ref.Name);
+            Definition = Marshal.PtrToStringAnsi(@ref.Definition);
         }
 
         internal unsafe void __MarshalTo(ref __Native @ref)
         {
-            @ref.Name = System.Runtime.InteropServices.Marshal.StringToHGlobalAnsi(Name);
-            @ref.Definition = System.Runtime.InteropServices.Marshal.StringToHGlobalAnsi(Definition);
+            @ref.Name = Marshal.StringToHGlobalAnsi(Name);
+            @ref.Definition = Marshal.StringToHGlobalAnsi(Definition);
         }
     }
 }

@@ -24,14 +24,27 @@ using System.Runtime.InteropServices;
 
 namespace DXNET.Win32
 {
+    /// <summary>
+    /// ComStream
+    /// </summary>
     [Guid("0000000c-0000-0000-C000-000000000046")]
-    public partial class ComStream : DXNET.Win32.ComStreamBase, DXNET.Win32.IStream
+    public partial class ComStream : ComStreamBase, IStream
     {
-        public ComStream(System.IntPtr nativePtr) : base(nativePtr)
+        /// <summary>
+        /// ComStream
+        /// </summary>
+        /// <param name="nativePtr"></param>
+        public ComStream(IntPtr nativePtr) : base(nativePtr)
         {
         }
 
-        public static explicit operator ComStream(System.IntPtr nativePtr) => nativePtr == System.IntPtr.Zero ? null : new ComStream(nativePtr);
+        /// <summary>
+        /// ComStream
+        /// </summary>
+        /// <param name="nativePtr"></param>
+
+        public static explicit operator ComStream(IntPtr nativePtr) => nativePtr == IntPtr.Zero ? null : new ComStream(nativePtr);
+        
         /// <summary>
         /// No documentation.
         /// </summary>
@@ -168,11 +181,12 @@ namespace DXNET.Win32
         /// <returns>No documentation.</returns>
         /// <unmanaged>HRESULT IStream::Clone([Out] IStream** ppstm)</unmanaged>
         /// <unmanaged-short>IStream::Clone</unmanaged-short>
-        public unsafe DXNET.Win32.IStream Clone()
+        public unsafe IStream Clone()
         {
-            DXNET.Win32.IStream stmOut;
-            System.IntPtr stmOut_ = System.IntPtr.Zero;
+            IStream stmOut;
+            IntPtr stmOut_ = System.IntPtr.Zero;
             DXNET.Result __result__;
+            
             __result__ = DXNET.LocalInterop.CalliStdCallint(this._nativePointer, &stmOut_, (*(void***)this._nativePointer)[13]);
             if (stmOut_ != System.IntPtr.Zero)
                 stmOut = new DXNET.Win32.ComStream(stmOut_);

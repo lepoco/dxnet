@@ -24,6 +24,9 @@ using System.Runtime.InteropServices;
 
 namespace DXNET.Win32
 {
+    /// <summary>
+    /// IStream
+    /// </summary>
     [Shadow(typeof(ComStreamShadow))]
     [Guid("0000000c-0000-0000-C000-000000000046")]
     public partial interface IStream : DXNET.Win32.IStreamBase

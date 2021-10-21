@@ -26,113 +26,63 @@
 namespace DXNET.Multimedia
 {
     /// <summary>
-    /// SPEAKER
+    /// AUDIO_STREAM_CATEGORY
     /// </summary>
-    public enum Speakers : int
+    public enum AudioStreamCategory : int
     {
         /// <summary>
-        /// SPEAKER_FRONT_LEFT
+        /// AudioCategory_Other
         /// </summary>
-        FrontLeft = 1,
+        Other = 0,
 
         /// <summary>
-        /// SPEAKER_FRONT_RIGHT
+        /// AudioCategory_ForegroundOnlyMedia
         /// </summary>
-        FrontRight = 2,
+        ForegroundOnlyMedia = 1,
 
         /// <summary>
-        /// SPEAKER_FRONT_CENTER
+        /// AudioCategory_Communications
         /// </summary>
-        FrontCenter = 4,
+        Communications = 3,
 
         /// <summary>
-        /// SPEAKER_LOW_FREQUENCY
+        /// AudioCategory_Alerts
         /// </summary>
-        LowFrequency = 8,
+        Alerts = 4,
 
         /// <summary>
-        /// SPEAKER_BACK_LEFT
+        /// AudioCategory_SoundEffects
         /// </summary>
-        BackLeft = 16,
+        SoundEffects = 5,
 
         /// <summary>
-        /// SPEAKER_BACK_RIGHT
+        /// AudioCategory_GameEffects
         /// </summary>
-        BackRight = 32,
+        GameEffects = 6,
 
         /// <summary>
-        /// SPEAKER_FRONT_LEFT_OF_CENTER
+        /// AudioCategory_GameMedia
         /// </summary>
-        FrontLeftOfCenter = 64,
+        GameMedia = 7,
 
         /// <summary>
-        /// SPEAKER_FRONT_RIGHT_OF_CENTER
+        /// AudioCategory_GameChat
         /// </summary>
-        FrontRightOfCenter = 128,
+        GameChat = 8,
 
         /// <summary>
-        /// SPEAKER_BACK_CENTER
+        /// AudioCategory_Speech
         /// </summary>
-        BackCenter = 256,
+        Speech = 9,
 
         /// <summary>
-        /// SPEAKER_SIDE_LEFT
+        /// AudioCategory_Movie
         /// </summary>
-        SideLeft = 512,
+        Movie = 10,
 
         /// <summary>
-        /// SPEAKER_SIDE_RIGHT
+        /// AudioCategory_Media
         /// </summary>
-        SideRight = 1024,
-
-        /// <summary>
-        /// SPEAKER_TOP_CENTER
-        /// </summary>
-        TopCenter = 2048,
-
-        /// <summary>
-        /// SPEAKER_TOP_FRONT_LEFT
-        /// </summary>
-        TopFrontLeft = 4096,
-
-        /// <summary>
-        /// SPEAKER_TOP_FRONT_CENTER
-        /// </summary>
-        TopFrontCenter = 8192,
-
-        /// <summary>
-        /// SPEAKER_TOP_FRONT_RIGHT
-        /// </summary>
-        TopFrontRight = 16384,
-
-        /// <summary>
-        /// SPEAKER_TOP_BACK_LEFT
-        /// </summary>
-        TopBackLeft = 32768,
-
-        /// <summary>
-        /// SPEAKER_TOP_BACK_CENTER
-        /// </summary>
-        TopBackCenter = 65536,
-
-        /// <summary>
-        /// SPEAKER_TOP_BACK_RIGHT
-        /// </summary>
-        TopBackRight = 131072,
-
-        /// <summary>
-        /// SPEAKER_RESERVED
-        /// </summary>
-        Reserved = 2147221504,
-
-        /// <summary>
-        /// SPEAKER_ALL
-        /// </summary>
-        All = -2147483648,
-
-        /// <summary>
-        /// None
-        /// </summary>
-        None = 0
+        Media = 11
     }
 }

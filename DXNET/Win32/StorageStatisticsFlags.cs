@@ -23,11 +23,25 @@ using System;
 
 namespace DXNET.Win32
 {
+    /// <summary>
+    /// STATFLAG
+    /// </summary>
     [Flags]
     public enum StorageStatisticsFlags : int
     {
+        /// <summary>
+        /// STATFLAG_DEFAULT
+        /// </summary>
         Default = 0,
+
+        /// <summary>
+        /// STATFLAG_NONAME
+        /// </summary>
         NoName = 1,
+
+        /// <summary>
+        /// None
+        /// </summary>
         None = 0
     }
 }

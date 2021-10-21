@@ -20,15 +20,15 @@
 // THE SOFTWARE.
 
 using System;
-using System.Runtime.InteropServices;
-
-using DXNET.Mathematics;
 
 namespace DXNET
 {
+    /// <summary>
+    /// LocalInterop
+    /// </summary>
     internal static partial class LocalInterop
     {
-        public static unsafe System.IntPtr CalliStdCallSystemIntPtr(void* thisObject, void* methodPtr)
+        public static unsafe IntPtr CalliStdCallSystemIntPtr(void* thisObject, void* methodPtr)
         {
             throw null;
         }
@@ -53,7 +53,7 @@ namespace DXNET
             throw null;
         }
 
-        public static unsafe int CalliStdCallint(void* thisObject, long param0, System.UInt32 param1, void* param2, void* methodPtr)
+        public static unsafe int CalliStdCallint(void* thisObject, long param0, uint param1, void* param2, void* methodPtr)
         {
             throw null;
         }
@@ -93,12 +93,12 @@ namespace DXNET
             throw null;
         }
 
-        public static unsafe DXNET.Mathematics.Interop.RawBool CalliStdCallSharpDXMathematicsInteropRawBool0(void* thisObject, DXNET.Mathematics.Interop.RawBool param0, void* methodPtr)
+        public static unsafe Mathematics.Interop.RawBool CalliStdCallSharpDXMathematicsInteropRawBool0(void* thisObject, Mathematics.Interop.RawBool param0, void* methodPtr)
         {
             throw null;
         }
 
-        public static unsafe DXNET.Mathematics.Interop.RawBool CalliStdCallSharpDXMathematicsInteropRawBool(void* thisObject, void* methodPtr)
+        public static unsafe Mathematics.Interop.RawBool CalliStdCallSharpDXMathematicsInteropRawBool(void* thisObject, void* methodPtr)
         {
             throw null;
         }

@@ -22,41 +22,33 @@
 namespace DXNET.XInput
 {
     /// <summary>
-    /// No documentation.
+    /// XUSER_INDEX
     /// </summary>
-    /// <unmanaged>XUSER_INDEX</unmanaged>
-    /// <unmanaged-short>XUSER_INDEX</unmanaged-short>
-    public enum UserIndex : System.Byte
+    public enum UserIndex : byte
     {
         /// <summary>
-        /// No documentation.
+        /// XUSER_INDEX_ANY
         /// </summary>
-        /// <unmanaged>XUSER_INDEX_ANY</unmanaged>
-        /// <unmanaged-short>XUSER_INDEX_ANY</unmanaged-short>
-        Any = unchecked((System.Byte)(255)),
+        Any = 255,
+
         /// <summary>
-        /// No documentation.
+        /// XUSER_INDEX_ONE
         /// </summary>
-        /// <unmanaged>XUSER_INDEX_ONE</unmanaged>
-        /// <unmanaged-short>XUSER_INDEX_ONE</unmanaged-short>
-        One = unchecked((System.Byte)(0)),
+        One = 0,
+
         /// <summary>
-        /// No documentation.
+        /// XUSER_INDEX_TWO
         /// </summary>
-        /// <unmanaged>XUSER_INDEX_TWO</unmanaged>
-        /// <unmanaged-short>XUSER_INDEX_TWO</unmanaged-short>
-        Two = unchecked((System.Byte)(1)),
+        Two = 1,
+
         /// <summary>
-        /// No documentation.
+        /// XUSER_INDEX_THREE
         /// </summary>
-        /// <unmanaged>XUSER_INDEX_THREE</unmanaged>
-        /// <unmanaged-short>XUSER_INDEX_THREE</unmanaged-short>
-        Three = unchecked((System.Byte)(2)),
+        Three = 2,
+
         /// <summary>
-        /// No documentation.
+        /// XUSER_INDEX_FOUR
         /// </summary>
-        /// <unmanaged>XUSER_INDEX_FOUR</unmanaged>
-        /// <unmanaged-short>XUSER_INDEX_FOUR</unmanaged-short>
-        Four = unchecked((System.Byte)(3))
+        Four = 3
     }
 }

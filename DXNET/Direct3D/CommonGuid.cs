@@ -20,53 +20,16 @@
 // THE SOFTWARE.
 
 using System;
-using System.Runtime.InteropServices;
 
 namespace DXNET.Direct3D
 {
     /// <summary>
-    /// D3D_INTERPOLATION
+    /// WKPDID
     /// </summary>
-    public enum InterpolationMode : int
+    public partial class CommonGuid
     {
-        /// <summary>
-        /// D3D_INTERPOLATION_UNDEFINED
-        /// </summary>
-        Undefined = 0,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_CONSTANT
-        /// </summary>
-        Constant = 1,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR
-        /// </summary>
-        Linear = 2,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_CENTROID
-        /// </summary>
-        LinearCentroid = 3,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE
-        /// </summary>
-        LinearNoperspective = 4,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE_CENTROID
-        /// </summary>
-        LinearNoperspectiveCentroid = 5,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_SAMPLE
-        /// </summary>
-        LinearSample = 6,
-
-        /// <summary>
-        /// D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE_SAMPLE
-        /// </summary>
-        LinearNoperspectiveSample = 7
+        ///<summary>Constant DebugObjectName</summary>
+        ///<unmanaged>WKPDID_D3DDebugObjectName</unmanaged>
+        public static readonly Guid DebugObjectName = new Guid("429b8c22-9188-4b0c-8742-acb0bf85c200");
     }
 }

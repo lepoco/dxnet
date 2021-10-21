@@ -19,66 +19,56 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Runtime.InteropServices;
-
 namespace DXNET.Direct3D
 {
-    public enum FeatureLevel : System.Int32
+    /// <summary>
+    /// D3D_FEATURE_LEVEL
+    /// </summary>
+    public enum FeatureLevel : int
     {
         /// <summary>
-        /// No documentation.
+        /// D3D_FEATURE_LEVEL_9_1
         /// </summary>
-        /// <unmanaged>D3D_FEATURE_LEVEL_9_1</unmanaged>
-        /// <unmanaged-short>D3D_FEATURE_LEVEL_9_1</unmanaged-short>
-        Level_9_1 = unchecked((System.Int32)(37120)),
+        Level_9_1 = 37120,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_FEATURE_LEVEL_9_2
         /// </summary>
-        /// <unmanaged>D3D_FEATURE_LEVEL_9_2</unmanaged>
-        /// <unmanaged-short>D3D_FEATURE_LEVEL_9_2</unmanaged-short>
-        Level_9_2 = unchecked((System.Int32)(37376)),
+        Level_9_2 = 37376,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_FEATURE_LEVEL_9_3
         /// </summary>
-        /// <unmanaged>D3D_FEATURE_LEVEL_9_3</unmanaged>
-        /// <unmanaged-short>D3D_FEATURE_LEVEL_9_3</unmanaged-short>
-        Level_9_3 = unchecked((System.Int32)(37632)),
+        Level_9_3 = 37632,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_FEATURE_LEVEL_10_0
         /// </summary>
-        /// <unmanaged>D3D_FEATURE_LEVEL_10_0</unmanaged>
-        /// <unmanaged-short>D3D_FEATURE_LEVEL_10_0</unmanaged-short>
-        Level_10_0 = unchecked((System.Int32)(40960)),
+        Level_10_0 = 40960,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_FEATURE_LEVEL_10_1
         /// </summary>
-        /// <unmanaged>D3D_FEATURE_LEVEL_10_1</unmanaged>
-        /// <unmanaged-short>D3D_FEATURE_LEVEL_10_1</unmanaged-short>
-        Level_10_1 = unchecked((System.Int32)(41216)),
+        Level_10_1 = 41216,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_FEATURE_LEVEL_11_0
         /// </summary>
-        /// <unmanaged>D3D_FEATURE_LEVEL_11_0</unmanaged>
-        /// <unmanaged-short>D3D_FEATURE_LEVEL_11_0</unmanaged-short>
-        Level_11_0 = unchecked((System.Int32)(45056)),
+        Level_11_0 = 45056,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_FEATURE_LEVEL_11_1
         /// </summary>
-        /// <unmanaged>D3D_FEATURE_LEVEL_11_1</unmanaged>
-        /// <unmanaged-short>D3D_FEATURE_LEVEL_11_1</unmanaged-short>
-        Level_11_1 = unchecked((System.Int32)(45312)),
+        Level_11_1 = 45312,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_FEATURE_LEVEL_12_0
         /// </summary>
-        /// <unmanaged>D3D_FEATURE_LEVEL_12_0</unmanaged>
-        /// <unmanaged-short>D3D_FEATURE_LEVEL_12_0</unmanaged-short>
-        Level_12_0 = unchecked((System.Int32)(49152)),
+        Level_12_0 = 49152,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_FEATURE_LEVEL_12_1
         /// </summary>
-        /// <unmanaged>D3D_FEATURE_LEVEL_12_1</unmanaged>
-        /// <unmanaged-short>D3D_FEATURE_LEVEL_12_1</unmanaged-short>
-        Level_12_1 = unchecked((System.Int32)(49408))
+        Level_12_1 = 49408
     }
 }

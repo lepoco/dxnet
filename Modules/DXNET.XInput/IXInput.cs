@@ -19,6 +19,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
+
 namespace DXNET.XInput
 {
     /// <summary>
@@ -26,22 +28,22 @@ namespace DXNET.XInput
     /// </summary>
     internal interface IXInput
     {
-        int XInputSetState(int dwUserIndex, DXNET.XInput.Vibration vibrationRef);
+        int XInputSetState(int dwUserIndex, Vibration vibrationRef);
 
-        int XInputGetState(int dwUserIndex, out DXNET.XInput.State stateRef);
+        int XInputGetState(int dwUserIndex, out State stateRef);
 
         int XInputGetAudioDeviceIds(int dwUserIndex,
-            System.IntPtr renderDeviceIdRef,
-            System.IntPtr renderCountRef,
-            System.IntPtr captureDeviceIdRef,
-            System.IntPtr captureCountRef);
+            IntPtr renderDeviceIdRef,
+            IntPtr renderCountRef,
+            IntPtr captureDeviceIdRef,
+            IntPtr captureCountRef);
 
-        void XInputEnable(DXNET.Mathematics.Interop.RawBool enable);
+        void XInputEnable(Mathematics.Interop.RawBool enable);
 
-        int XInputGetBatteryInformation(int dwUserIndex, DXNET.XInput.BatteryDeviceType devType, out DXNET.XInput.BatteryInformation batteryInformationRef);
+        int XInputGetBatteryInformation(int dwUserIndex, BatteryDeviceType devType, out BatteryInformation batteryInformationRef);
 
-        int XInputGetKeystroke(int dwUserIndex, int dwReserved, out DXNET.XInput.Keystroke keystrokeRef);
+        int XInputGetKeystroke(int dwUserIndex, int dwReserved, out Keystroke keystrokeRef);
 
-        int XInputGetCapabilities(int dwUserIndex, DXNET.XInput.DeviceQueryType dwFlags, out DXNET.XInput.Capabilities capabilitiesRef);
+        int XInputGetCapabilities(int dwUserIndex, DeviceQueryType dwFlags, out Capabilities capabilitiesRef);
     }
 }

@@ -24,26 +24,38 @@ using System.Runtime.InteropServices;
 
 namespace DXNET.Win32
 {
+    /// <summary>
+    /// ComStreamBase
+    /// </summary>
     [Guid("0c733a30-2a1c-11ce-ade5-00aa0044773d")]
-    public partial class ComStreamBase : DXNET.ComObject, DXNET.Win32.IStreamBase
+    public partial class ComStreamBase : DXNET.ComObject, IStreamBase
     {
+        /// <summary>
+        /// ComStreamBase
+        /// </summary>
+        /// <param name="nativePtr"></param>
         public ComStreamBase(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
-        public static explicit operator ComStreamBase(System.IntPtr nativePtr) => nativePtr == System.IntPtr.Zero ? null : new ComStreamBase(nativePtr);
         /// <summary>
-        /// No documentation.
+        /// ComStreamBase
+        /// </summary>
+        /// <param name="nativePtr"></param>
+        public static explicit operator ComStreamBase(System.IntPtr nativePtr) => nativePtr == System.IntPtr.Zero ? null : new ComStreamBase(nativePtr);
+
+        /// <summary>
+        /// ISequentialStream::Read
         /// </summary>
         /// <param name = "vRef">No documentation.</param>
         /// <param name = "cb">No documentation.</param>
         /// <returns>No documentation.</returns>
         /// <unmanaged>HRESULT ISequentialStream::Read([Out, Buffer] void* pv,[In] ULONG cb,[Out, Optional] ULONG* pcbRead)</unmanaged>
-        /// <unmanaged-short>ISequentialStream::Read</unmanaged-short>
-        public unsafe System.Int32 Read(System.IntPtr vRef, System.Int32 cb)
+        public unsafe int Read(IntPtr vRef, int cb)
         {
-            System.Int32 cbReadRef;
+            int cbReadRef;
             DXNET.Result __result__;
+
             __result__ = DXNET.LocalInterop.CalliStdCallint(this._nativePointer, (void*)vRef, cb, &cbReadRef, (*(void***)this._nativePointer)[3]);
             __result__.CheckError();
             return cbReadRef;

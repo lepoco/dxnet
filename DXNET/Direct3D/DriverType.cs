@@ -24,33 +24,39 @@ using System.Runtime.InteropServices;
 
 namespace DXNET.Direct3D
 {
+    /// <summary>
+    /// DriverType
+    /// </summary>
     public enum DriverType : int
     {
-        Unknown = unchecked((System.Int32)(0)),
-        Hardware = unchecked((System.Int32)(1)),
         /// <summary>
-        /// No documentation.
+        /// D3D_DRIVER_TYPE_UNKNOWN
         /// </summary>
-        /// <unmanaged>D3D_DRIVER_TYPE_REFERENCE</unmanaged>
-        /// <unmanaged-short>D3D_DRIVER_TYPE_REFERENCE</unmanaged-short>
-        Reference = unchecked((System.Int32)(2)),
+        Unknown = 0,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_DRIVER_TYPE_HARDWARE
         /// </summary>
-        /// <unmanaged>D3D_DRIVER_TYPE_NULL</unmanaged>
-        /// <unmanaged-short>D3D_DRIVER_TYPE_NULL</unmanaged-short>
-        Null = unchecked((System.Int32)(3)),
+        Hardware = 1,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_DRIVER_TYPE_REFERENCE
         /// </summary>
-        /// <unmanaged>D3D_DRIVER_TYPE_SOFTWARE</unmanaged>
-        /// <unmanaged-short>D3D_DRIVER_TYPE_SOFTWARE</unmanaged-short>
-        Software = unchecked((System.Int32)(4)),
+        Reference = 2,
+
         /// <summary>
-        /// No documentation.
+        /// D3D_DRIVER_TYPE_NULL
         /// </summary>
-        /// <unmanaged>D3D_DRIVER_TYPE_WARP</unmanaged>
-        /// <unmanaged-short>D3D_DRIVER_TYPE_WARP</unmanaged-short>
-        Warp = unchecked((System.Int32)(5))
+        Null = 3,
+
+        /// <summary>
+        /// D3D_DRIVER_TYPE_SOFTWARE
+        /// </summary>
+        Software = 4,
+
+        /// <summary>
+        /// D3D_DRIVER_TYPE_WARP
+        /// </summary>
+        Warp = 5
     }
 }

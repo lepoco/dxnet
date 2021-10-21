@@ -48,10 +48,18 @@ namespace DXNET
             NativePointer = Marshal.GetIUnknownForObject(iunknowObject);
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ComObject"/> class from a IUnknown object.
+        /// </summary>
+        /// <param name="nativePtr">Reference to a native pointer.</param>
         public ComObject(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ComObject"/> class from a IUnknown object.
+        /// </summary>
+        /// <param name="nativePtr">Reference to a native pointer.</param>
         public static explicit operator ComObject(System.IntPtr nativePtr) => nativePtr == System.IntPtr.Zero ? null : new ComObject(nativePtr);
 
         /// <summary>
@@ -308,12 +316,19 @@ namespace DXNET
             base.Dispose(disposing);
         }
 
+        /// <summary>
+        /// NativePointerUpdating
+        /// </summary>
         protected override void NativePointerUpdating()
         {
             if (Configuration.EnableObjectTracking)
                 ObjectTracker.UnTrack(this);
         }
 
+        /// <summary>
+        /// NativePointerUpdated
+        /// </summary>
+        /// <param name="oldNativePointer"></param>
         protected override void NativePointerUpdated(IntPtr oldNativePointer)
         {
             if (Configuration.EnableObjectTracking)

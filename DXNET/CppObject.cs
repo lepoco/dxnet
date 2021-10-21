@@ -130,6 +130,10 @@ namespace DXNET
         {
         }
 
+        /// <summary>
+        /// Dispose
+        /// </summary>
+        /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
         {
         }
@@ -168,7 +172,8 @@ namespace DXNET
                 return ((CppObject)callback).NativePointer;
 
             // Setup the shadow container in order to support multiple inheritance
-            var shadowContainer = callback.Shadow as ShadowContainer;
+            ShadowContainer shadowContainer = callback.Shadow as ShadowContainer;
+            
             if (shadowContainer == null)
             {
                 shadowContainer = new ShadowContainer();

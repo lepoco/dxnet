@@ -20,28 +20,23 @@
 // THE SOFTWARE.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 namespace DXNET.XInput
 {
     public partial struct Vibration
     {
         /// <summary>
-        /// No documentation.
+        /// wLeftMotorSpeed
         /// </summary>
-        /// <unmanaged>wLeftMotorSpeed</unmanaged>
-        /// <unmanaged-short>wLeftMotorSpeed</unmanaged-short>
-        public System.UInt16 LeftMotorSpeed;
+        public ushort LeftMotorSpeed;
+
         /// <summary>
-        /// No documentation.
+        /// wRightMotorSpeed
         /// </summary>
-        /// <unmanaged>wRightMotorSpeed</unmanaged>
-        /// <unmanaged-short>wRightMotorSpeed</unmanaged-short>
-        public System.UInt16 RightMotorSpeed;
-        [System.Runtime.InteropServices.StructLayoutAttribute(System.Runtime.InteropServices.LayoutKind.Sequential, Pack = 0, CharSet = System.Runtime.InteropServices.CharSet.Unicode)]
+        public ushort RightMotorSpeed;
+        
+        [StructLayout(LayoutKind.Sequential, Pack = 0, CharSet = CharSet.Unicode)]
         internal partial struct __Native
         {
             public System.Int16 LeftMotorSpeed;
@@ -54,14 +49,14 @@ namespace DXNET.XInput
 
         internal unsafe void __MarshalFrom(ref __Native @ref)
         {
-            LeftMotorSpeed = (System.UInt16)@ref.LeftMotorSpeed;
-            RightMotorSpeed = (System.UInt16)@ref.RightMotorSpeed;
+            LeftMotorSpeed = (ushort)@ref.LeftMotorSpeed;
+            RightMotorSpeed = (ushort)@ref.RightMotorSpeed;
         }
 
         internal unsafe void __MarshalTo(ref __Native @ref)
         {
-            @ref.LeftMotorSpeed = (System.Int16)LeftMotorSpeed;
-            @ref.RightMotorSpeed = (System.Int16)RightMotorSpeed;
+            @ref.LeftMotorSpeed = (short)LeftMotorSpeed;
+            @ref.RightMotorSpeed = (short)RightMotorSpeed;
         }
     }
 }

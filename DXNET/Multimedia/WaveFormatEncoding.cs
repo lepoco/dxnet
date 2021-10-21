@@ -23,6 +23,9 @@ using System;
 
 namespace DXNET.Multimedia
 {
+    /// <summary>
+    /// WaveFormatEncoding
+    /// </summary>
     public enum WaveFormatEncoding : int
     {
         Unknown = unchecked((System.Int16)(0)),

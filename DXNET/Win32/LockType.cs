@@ -23,12 +23,25 @@ using System;
 
 namespace DXNET.Win32
 {
-
+    /// <summary>
+    /// LOCKTYPE
+    /// </summary>
     [Flags]
     public enum LockType : int
     {
+        /// <summary>
+        /// LOCK_WRITE
+        /// </summary>
         Write = 1,
+
+        /// <summary>
+        /// LOCK_EXCLUSIVE
+        /// </summary>
         Exclusive = 2,
+
+        /// <summary>
+        /// LOCK_ONLYONCE
+        /// </summary>
         OnlyOnce = 4
     }
 }
