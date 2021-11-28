@@ -1,0 +1,27 @@
+name: PR
+
+on:
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-2022
+    if: contains(github.event.head_commit.message, 'ci skip') == false
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: microsoft/setup-msbuild@v1.1
+        with:
+          msbuild-architecture: x64
+      - uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: 'latest'
+
+      - name: NuGet restore
+        run: nuget restore DXNET.sln
+
+      - name: Build
+        run: msbuild DXNET.sln -p:Configuration=Release -m
