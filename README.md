@@ -41,11 +41,17 @@ One of the assumptions of the fork was to cut it off from other libraries and ad
 
 In order to compile **DX .NET**, you need to install **Visual Studio 2022 or newer** with the following workloads and components:
 
-- [x] Visual C++ Toolset Component
 - [x] Windows 10 SDK Component
 - [x] C# Development Workload
 - [x] .NET Core Cross Platform Development Workload
+- [x] .NET Framework 4.6 & 4.8 Development Workload
+- [x] .NET 5.0 & 6.0 Development Workload
 
+## Compilation
+Use Visual Studio 2022 and invoke the .sln.  
+
+**Visual Studio**  
+DXNET is an Open Source project. You are entitled to download and use the freely available Visual Studio Community Edition to build, run or develop for DXNET. As per the Visual Studio Community Edition license, this applies regardless of whether you are an individual or a corporate user.
 
 ## License
 **DX .NET** is free and open source software licensed under MIT License. You can use it in private and commercial projects. Keep in mind that you must include a copy of the license in your project.
