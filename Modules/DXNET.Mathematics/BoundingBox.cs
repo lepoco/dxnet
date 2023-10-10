@@ -95,7 +95,7 @@ namespace DXNET
         }
 
         /// <summary>
-        /// Returns the height of the bounding box
+        /// Returns the depth of the bounding box
         /// </summary>
         public float Depth
         {
@@ -111,7 +111,7 @@ namespace DXNET
         }
 
         /// <summary>
-        /// Returns the size of the bounding box
+        /// Returns the center point of the bounding box
         /// </summary>
         public Vector3 Center
         {
