@@ -4,7 +4,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/lepoco/dxnet)](https://github.com/lepoco/dxnet/blob/master/LICENSE) [![NET](https://img.shields.io/badge/.NET-6.0.0-red)](https://github.com/lepoco/DXNET/blob/main/DXNET/DXNET.csproj) [![Nuget](https://img.shields.io/nuget/v/DXNET)](https://www.nuget.org/packages/DXNET) [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/DXNET?label=nuget-pre)](https://www.nuget.org/packages/DXNET/) [![Nuget](https://img.shields.io/nuget/dt/DXNET?label=nuget-downloads)](https://www.nuget.org/packages/DXNET/)
 
-DX .NET, a fork of [SharpDX](http://sharpdx.org), is free software allowing the development of high performance game, 2D and 3D graphics rendering as well as realtime sound application.  
+DX .NET, a fork of [SharpDX](https://github.com/sharpdx/SharpDX), is free software allowing the development of high performance game, 2D and 3D graphics rendering as well as realtime sound application.  
 One of the assumptions of the fork was to cut it off from other libraries and add the generated C++ headers to the code, so that compilation is not dependent on any libraries. DX .NET uses only the capabilities of the .NET platform.
 
 ## Hall of fame
